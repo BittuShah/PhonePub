@@ -9,8 +9,8 @@ import theme from '../../theme';
 
 export const Header = ({leftIcon, drawer}) => {
   return (
-    <SafeAreaView style={{backgroundColor: theme.colors.NAVY_BLUE}}>
-      <StatusBar backgroundColor={theme.colors.NAVY_BLUE} />
+    <SafeAreaView style={{backgroundColor: theme.colors.skyBlue}}>
+      <StatusBar backgroundColor={theme.colors.skyBlue} />
       <StyleHeader>
         {leftIcon && leftIcon === 'menu' && (
           <Icon

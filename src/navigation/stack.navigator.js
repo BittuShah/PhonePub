@@ -27,12 +27,13 @@ export const PhonePubStackScreen = ({navigation}) => {
         name={AppRoute.PRATIK_TEST}
         component={TestingPratikComponents}
         options={{header: (props) => null}}
-      />
+      /> */}
+
       <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
-        options={{header: (props) => null}}
-      /> */}
+        options={{header: props => null}}
+      />
 
       <Stack.Screen
         name={AppRoute.HOME_SCREEN}
