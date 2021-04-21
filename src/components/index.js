@@ -1,0 +1,10 @@
+import {CustomText} from './commonComponents';
+import {Loader} from './Loader';
+
+// NEW
+import {Header} from './Header';
+import Icon from './Icon';
+import {Button} from './Button';
+import {Divider} from './Divider';
+
+export {CustomText, Loader, Header, Icon, Button, Divider};
