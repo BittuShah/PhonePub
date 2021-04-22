@@ -1,33 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import {Header, IconBg} from '../../components';
 import theme from '../../theme';
 
-const TestingNisargComponents = () => {
+const TestingNisargComponents = ({route, navigation}) => {
   return (
-    <View
-      style={{
-        backgroundColor: theme.colors.skyBlue,
-        flex: 1,
-        paddingHorizontal: 30,
-        paddingVertical: 30,
-      }}>
-      <View style={styles.whiteView}>
-        <TextInput style={styles.textInput} />
-      </View>
+    <View style={styles.whiteView}>
+      <Header leftIcon="menu" onLeftPress={() => navigation.openDrawer()} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   whiteView: {
-    height: 40,
-    width: '100%',
-    borderRadius: 10,
-    backgroundColor: theme.colors.WHITE,
-  },
-  textInput: {
-    paddingHorizontal: 10,
-    color: theme.colors.black,
+    flex: 1,
+    backgroundColor: 'red',
+    // paddingVertical: 50,
+    // paddingHorizontal: 50,
   },
 });
 

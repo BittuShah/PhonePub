@@ -1,35 +1,78 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 
-import {Icon} from '../index';
-import {StyleHeader} from './style';
+import {CustomText, Icon, IconBg} from '../index';
+import {
+  StyleHeader,
+  StyleTextView,
+  StyleLeftTextButton,
+  StyleRightTextButton,
+} from './style';
 import navigation from '../../lib/navigationService';
 import {AppRoute} from '../../navigation/appRoute';
 import theme from '../../theme';
 
-export const Header = ({leftIcon, drawer}) => {
+export const Header = ({
+  leftIcon,
+  leftText,
+  rightIcon,
+  rightText,
+  primaryText,
+  secondaryText,
+  onLeftPress,
+  onRightPress,
+  headerBackground,
+  statusBarBackground,
+}) => {
   return (
-    <SafeAreaView style={{backgroundColor: theme.colors.skyBlue}}>
-      <StatusBar backgroundColor={theme.colors.skyBlue} />
-      <StyleHeader>
-        {leftIcon && leftIcon === 'menu' && (
-          <Icon
-            name="user"
+    // <SafeAreaView style={{backgroundColor: theme.colors.skyBlue}}>
+    <SafeAreaView>
+      <StatusBar
+        backgroundColor={
+          statusBarBackground ? statusBarBackground : theme.colors.skyBlue
+        }
+      />
+
+      <StyleHeader headerBackground={headerBackground}>
+        {leftText && (
+          <StyleLeftTextButton onPress={onLeftPress}>
+            <CustomText text={leftText} />
+          </StyleLeftTextButton>
+        )}
+
+        {leftIcon && (
+          <IconBg
+            name={leftIcon}
             color={theme.colors.WHITE}
-            // onPress={() => drawer.openDrawer()}
+            onPress={onLeftPress}
           />
         )}
 
-        {leftIcon && leftIcon === 'back' && (
-          <Icon
-            name="left-arrow"
-            color={theme.colors.WHITE}
+        <StyleTextView>
+          {primaryText && (
+            <CustomText
+              text={primaryText}
+              fontSize={theme.fontSize.MEDIUM_LARGE}
+            />
+          )}
+          {secondaryText && (
+            <CustomText text={secondaryText} fontSize={theme.fontSize.SMALL} />
+          )}
+        </StyleTextView>
 
-            // onPress={() => navigation.goBack()}
+        {rightIcon && (
+          <IconBg
+            name={rightIcon}
+            color={theme.colors.WHITE}
+            onPress={onRightPress}
           />
         )}
 
-        <Icon name="user" color={theme.colors.WHITE} />
+        {rightText && (
+          <StyleRightTextButton onPress={onRightPress}>
+            <CustomText text={rightText} />
+          </StyleRightTextButton>
+        )}
       </StyleHeader>
     </SafeAreaView>
   );

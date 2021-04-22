@@ -32,25 +32,27 @@ export const PhonePubStackScreen = ({navigation}) => {
       <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
-        options={{header: props => null}}
+        options={{
+          headerShown: false,
+        }}
       />
 
       <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}
         options={{
-          header: props => <Header leftIcon="menu" drawer={navigation} />,
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name={AppRoute.ORDER_NOW_SCREEN}
         component={OrderNowScreen}
-        options={{header: props => <Header leftIcon="back" />}}
+        options={{headerShown: false}}
       />
       <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}
         component={BuyNowScreen}
-        options={{header: props => <Header leftIcon="back" />}}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );

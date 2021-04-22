@@ -52,6 +52,9 @@ export default MainContainer = () => {
           children={AppNavigator}
           options={{
             drawerIcon: ({color, size}) => <Icon name="user" />,
+            header: props => (
+              <Header leftIcon="left-arrow" navigation={navigation} />
+            ),
           }}
         />
         <Drawer.Screen
@@ -59,6 +62,9 @@ export default MainContainer = () => {
           component={MyOrderScreen}
           options={{
             drawerIcon: ({color, size}) => <Icon name="user" />,
+            header: props => (
+              <Header leftIcon="left-arrow" navigation={navigation} />
+            ),
           }}
         />
         <Drawer.Screen
