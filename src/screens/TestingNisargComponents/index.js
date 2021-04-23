@@ -1,34 +1,14 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
-import theme from '../../theme';
+import {Text, StyleSheet, ScrollView} from 'react-native';
 
 const TestingNisargComponents = () => {
   return (
-    <View
-      style={{
-        backgroundColor: theme.colors.skyBlue,
-        flex: 1,
-        paddingHorizontal: 30,
-        paddingVertical: 30,
-      }}>
-      <View style={styles.whiteView}>
-        <TextInput style={styles.textInput} />
-      </View>
-    </View>
+    <ScrollView style={{flex: 1}}>
+      <Text>Hello</Text>
+    </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({
-  whiteView: {
-    height: 40,
-    width: '100%',
-    borderRadius: 10,
-    backgroundColor: theme.colors.WHITE,
-  },
-  textInput: {
-    paddingHorizontal: 10,
-    color: theme.colors.black,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default TestingNisargComponents;

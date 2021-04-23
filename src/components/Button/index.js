@@ -3,10 +3,12 @@ import theme from '../../theme';
 import {CustomText} from '../commonComponents';
 import {StyleButton} from './style';
 
-export const Button = ({title, onPress}) => {
+export const Button = ({title, onPress, isBold}) => {
   return (
     <StyleButton onPress={onPress}>
-      <CustomText color={theme.colors.WHITE}>{title}</CustomText>
+      <CustomText color={theme.colors.WHITE} isBold={isBold}>
+        {title}
+      </CustomText>
     </StyleButton>
   );
 };

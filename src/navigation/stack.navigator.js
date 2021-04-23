@@ -9,6 +9,8 @@ import navigation from '../lib/navigationService';
 import {Header} from '../components';
 
 import {
+  LoginScreen,
+  SignupScreen,
   LogoScreen,
   HomeScreen,
   OrderNowScreen,
@@ -28,12 +30,22 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={TestingPratikComponents}
         options={{header: (props) => null}}
       /> */}
+      {/* <Stack.Screen
+        name={AppRoute.LOGIN_SCREEN}
+        component={LoginScreen}
+        options={{header: props => null}}
+      /> */}
 
       <Stack.Screen
+        name={AppRoute.SIGNUP_SCREEN}
+        component={SignupScreen}
+        options={{header: props => null}}
+      />
+      {/* <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
         options={{header: props => null}}
-      />
+      /> */}
 
       <Stack.Screen
         name={AppRoute.HOME_SCREEN}

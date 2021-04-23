@@ -11,18 +11,21 @@ export default theme = {
 
     //DEVELOPER COLORS
     PRIMARY_COLOR: '#2aabb8',
+    GOLDEN: '#f5a927',
     WHITE: '#ffffff',
     PLACE_HOLDER_TEXT_COLOR: '#c9c9c9',
     GREY: 'grey',
     GREY2: '#aaa',
     GREY3: '#ccc',
     GREY4: '#e9e9e9',
+    GREY5: '#f8f8f8',
     WHITE_FADE: 'rgba(255, 255, 255, 0.6)',
     BLACK: '#000',
     black: '#000',
     BACKGROUND_COLOR: '#EEEFF1',
     BLUE: '#0079B8',
     skyBlue: '#1E96E0',
+    TRY: '#3f51b5',
   },
   //FONT FAMILY
   fontFamily: {
