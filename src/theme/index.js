@@ -29,15 +29,14 @@ export default theme = {
   },
   //FONT FAMILY
   fontFamily: {
-    extra_bold: `${Constants.FONT_FAMILY.ROBOTO}-ExtraBold`,
-    bold: `${Constants.FONT_FAMILY.ROBOTO}-Bold`,
-    light: `${Constants.FONT_FAMILY.ROBOTO}-Light`,
-    medium: `${Constants.FONT_FAMILY.ROBOTO}-Medium`,
-    regular: `${Constants.FONT_FAMILY.ROBOTO}-Regular`,
-    semi_bold: `${Constants.FONT_FAMILY.ROBOTO}-Black`,
-    thin: `${Constants.FONT_FAMILY.ROBOTO}-Thin`,
-    extra_light: `${Constants.FONT_FAMILY.ROBOTO}-ExtraLight`,
-    black: `${Constants.FONT_FAMILY.ROBOTO}-Black`,
+    extra_bold: 'Mulish-ExtraBold',
+    bold: 'Mulish-Bold',
+    light: 'Mulish-Light',
+    medium: 'Mulish-Medium',
+    regular: 'Mulish-Regular',
+    semi_bold: 'Mulish-Black',
+    extra_light: 'Mulish-ExtraLight',
+    black: 'Mulish-Black',
   },
   //FONT SIZE
   fontSize: {

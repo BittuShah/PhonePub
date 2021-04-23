@@ -1,4 +1,3 @@
-import {CustomText} from './commonComponents';
 import {Loader} from './Loader';
 
 // NEW
@@ -8,5 +7,17 @@ import {Button} from './Button';
 import {Divider} from './Divider';
 import {IconInput} from './IconInput';
 import {Link} from './Link';
+import IconBg from './IconBg';
+import CustomText from './CustomText';
 
-export {CustomText, Loader, Header, Icon, Button, Divider, IconInput, Link};
+export {
+  CustomText,
+  Loader,
+  Header,
+  Icon,
+  Button,
+  Divider,
+  IconInput,
+  Link,
+  IconBg,
+};
