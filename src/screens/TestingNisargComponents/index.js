@@ -13,14 +13,22 @@ const TestingNisargComponents = ({route, navigation}) => {
   return (
     <View style={styles.whiteView}>
       <Header leftIcon="menu" onLeftPress={() => navigation.openDrawer()} />
+      <Text
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 18,
+          fontFamily: theme.fontFamily.regular,
+        }}>
+        Hello world
+      </Text>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   whiteView: {
     flex: 1,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     // paddingVertical: 50,
     // paddingHorizontal: 50,
   },
