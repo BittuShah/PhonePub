@@ -45,9 +45,10 @@ const SignupScreen = () => {
             <IconInput iconName="phone" placeHolder="Phone"></IconInput>
           </View>
           <Button title="Sign Up" isBold={true} />
-          <Text style={styles.bottomText}>
-            Already have an account? <Link text="Sign In" />
-          </Text>
+          <View style={styles.bottomTextView}>
+            <Text style={styles.bottomText}>Already have an account?</Text>
+            <Link text="Sign In" />
+          </View>
         </View>
       </ImageBackground>
     </ScrollView>
@@ -96,15 +97,21 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   bottomText: {
-    flex: 1,
+    // flex: 1,
     fontSize: 15,
-    marginTop: 10,
-    paddingHorizontal: 20,
+    marginRight: 5,
+    // paddingHorizontal: 20,
   },
   link: {
     color: theme.colors.skyBlue,
     fontWeight: 'bold',
     fontSize: 17,
+  },
+  bottomTextView: {
+    flexDirection: 'row',
+    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

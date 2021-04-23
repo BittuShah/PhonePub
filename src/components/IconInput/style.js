@@ -8,7 +8,7 @@ const StyleContainer = styled.View`
   justify-content: center;
   align-items: center;
   border-radius: 17px;
-  padding-horizontal: 5px;
+  padding-horizontal: 15px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : theme.colors.GREY5};
   margin-bottom: 25px;

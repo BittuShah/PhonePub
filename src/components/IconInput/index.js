@@ -12,8 +12,16 @@ export const IconInput = ({
 }) => {
   return (
     <StyleContainer>
-      <Icon name={iconName} style={styles.inputIcon} height="18" width="18" />
-      <StyleInput placeholder={placeHolder}></StyleInput>
+      <Icon
+        name={iconName}
+        style={styles.inputIcon}
+        height="17"
+        width="17"
+        color="#393939"
+      />
+      <StyleInput
+        placeholder={placeHolder}
+        placeholderTextColor="#abaeb0"></StyleInput>
     </StyleContainer>
   );
 };
