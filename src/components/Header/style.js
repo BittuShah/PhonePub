@@ -6,10 +6,11 @@ export const StyleHeader = styled.View`
   justify-content: space-between;
   color: ${theme.colors.WHITE};
   padding-horizontal: 15px;
-  padding-vertical: 8px;
+  height: 60px;
   align-items: center;
   background-color: ${props =>
     props.headerBackground ? props.headerBackground : '#fff'};
+  border: 1px solid red;
 `;
 
 export const StyleTextView = styled.View`

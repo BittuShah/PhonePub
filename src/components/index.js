@@ -1,7 +1,7 @@
 import {Loader} from './Loader';
 
 // NEW
-import {Header} from './Header';
+import Header from './Header';
 import Icon from './Icon';
 import {Button} from './Button';
 import {Divider} from './Divider';

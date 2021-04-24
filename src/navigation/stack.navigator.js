@@ -36,18 +36,18 @@ export const PhonePubStackScreen = ({navigation}) => {
         options={{header: props => null}}
       /> */}
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.SIGNUP_SCREEN}
         component={SignupScreen}
         options={{header: props => null}}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
         options={{
           headerShown: false,
         }}
-      />
+      />  */}
 
       <Stack.Screen
         name={AppRoute.HOME_SCREEN}

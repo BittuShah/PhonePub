@@ -1,19 +1,41 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Button} from '../../components';
-import navigation from '../../lib/navigationService';
-import {AppRoute} from '../../navigation/appRoute';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import {Header, IconBg} from '../../components';
+import theme from '../../theme';
 
-const HomeScreen = () => {
+const HomeScreen = ({route, navigation}) => {
   return (
-    <View>
-      {/* <Text>HomeScreen</Text> */}
-      <Button
-        title="Order Now"
-        onPress={() => navigation.navigate(AppRoute.ORDER_NOW_SCREEN)}
+    <View style={styles.whiteView}>
+      <Header
+        leftIcon="menu"
+        // leftText="Hello"
+        // onLeftPress={() => navigation.openDrawer()}
+        headerBackground="#39abee"
+        // statusBarBackground="#39abee"
+        rightIcon="close"
+        // rightIconBg="#3f51b5"
+        // rightText="skip"
+        // leftTextColor="red"
+        searchEnabled
+        primaryText="The Header Screen"
+        secondaryText="Hello world"
       />
     </View>
   );
 };
+const styles = StyleSheet.create({
+  whiteView: {
+    flex: 1,
+    backgroundColor: '#39abee',
+    // paddingVertical: 50,
+    // paddingHorizontal: 50,
+  },
+});
 
 export default HomeScreen;

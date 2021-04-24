@@ -40,7 +40,9 @@ const SignupScreen = () => {
             <IconInput iconName="user-fill" placeHolder="User Name"></IconInput>
             <IconInput iconName="email-fill" placeHolder="Email"></IconInput>
 
-            <IconInput iconName="padlock" placeHolder="Password"></IconInput>
+            <IconInput
+              iconName="password-key"
+              placeHolder="Password"></IconInput>
 
             <IconInput iconName="phone" placeHolder="Phone"></IconInput>
           </View>
