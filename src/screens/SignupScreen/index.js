@@ -1,94 +1,63 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ScrollView,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Link} from '../../components';
+import {Button, IconInput, Link, Header} from '../../components';
 
 const SignupScreen = () => {
   return (
     <ScrollView
       style={{
-        // backgroundColor: theme.colors.TRY,
+        backgroundColor: theme.colors.PRIMARY_BLUE,
         flex: 1,
-        // paddingHorizontal: 20,
-        // paddingVertical: 30,
+        paddingVertical: 10,
       }}>
-      <ImageBackground
-        source={require('../../assets/gradient-bg.png')}
-        style={styles.backgroundImage}>
-        <View
-          style={{
-            alignItems: 'center',
-          }}>
-          <Image
-            style={styles.logo}
-            source={require('./../../assets/logocrop.png')}
-          />
+      <Header
+        primaryText="Sign up"
+        headerBackground={theme.colors.PRIMARY_BLUE}
+      />
+
+      <View style={styles.whiteView}>
+        <Text style={styles.title}>Registration</Text>
+        <Text style={styles.subTitle}>Fill your account details</Text>
+        <View style={styles.inputContainer}>
+          <IconInput iconName="id-card-fill" placeHolder="Name" />
+
+          <IconInput iconName="user-fill" placeHolder="User Name"></IconInput>
+          <IconInput iconName="email-fill" placeHolder="Email"></IconInput>
+
+          <IconInput iconName="padlock" placeHolder="Password"></IconInput>
+
+          {/* <IconInput iconName="phone" placeHolder="Phone"></IconInput> */}
         </View>
-        <View style={styles.whiteView}>
-          <Text style={styles.title}>Registration</Text>
-          <Text style={styles.subTitle}>Fill your account details</Text>
-          <View style={styles.inputContainer}>
-            <IconInput iconName="id-card-fill" placeHolder="Name" />
-
-            <IconInput iconName="user-fill" placeHolder="User Name"></IconInput>
-            <IconInput iconName="email-fill" placeHolder="Email"></IconInput>
-
-            <IconInput iconName="padlock" placeHolder="Password"></IconInput>
-
-            <IconInput iconName="phone" placeHolder="Phone"></IconInput>
-          </View>
-          <Button title="Sign Up" isBold={true} />
-          <View style={styles.bottomTextView}>
-            <Text style={styles.bottomText}>Already have an account?</Text>
-            <Link text="Sign In" />
-          </View>
+        <Button title="Sign up" isBold={true} />
+        <View style={styles.bottomTextView}>
+          <Text style={styles.bottomText}>Already have an account?</Text>
+          <Link text="Sign In" />
         </View>
-      </ImageBackground>
+      </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    resizeMode: 'cover', // or 'stretch'
-  },
-  logo: {
-    height: 100,
-    width: 100,
-    marginTop: 30,
-    marginBottom: 40,
-  },
   whiteView: {
     width: '100%',
-    height: '80%',
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
-    paddingBottom: 15,
+    paddingBottom: 40,
     paddingHorizontal: 20,
-    // marginHorizontal: 10,
-    // marginBottom: 20,
+    marginTop: 40,
   },
   title: {
     fontSize: 28,
-    color: theme.colors.black,
+    fontFamily: theme.fontFamily.bold,
+    color: theme.colors.TITLE,
   },
   subTitle: {
-    color: theme.colors.GREY,
-    fontWeight: 'bold',
+    color: theme.colors.SUB_TITLE,
+    fontFamily: theme.fontFamily.bold,
     marginTop: 4,
     marginBottom: 10,
   },
@@ -97,15 +66,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   bottomText: {
-    // flex: 1,
     fontSize: 15,
     marginRight: 5,
-    // paddingHorizontal: 20,
-  },
-  link: {
-    color: theme.colors.skyBlue,
-    fontWeight: 'bold',
-    fontSize: 17,
+    fontFamily: theme.fontFamily.medium,
   },
   bottomTextView: {
     flexDirection: 'row',
@@ -114,28 +77,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-// inputView: {
-//   flexDirection: 'row',
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   borderRadius: 17,
-//   paddingHorizontal: 5,
-//   backgroundColor: theme.colors.BLACK,
-// },
-// inputIcon: {
-//   height: 100,
-//   width: 100,
-//   resizeMode: 'stretch',
-//   alignItems: 'center',
-// },
-// textInput: {
-//   flex: 1,
-//   marginLeft: 2,
-//   borderRadius: 17,
-//   fontSize: 15,
-//   backgroundColor: theme.colors.GREY4,
-//   color: theme.colors.black,
-// },
 
 export default SignupScreen;

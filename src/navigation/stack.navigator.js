@@ -11,6 +11,9 @@ import {Header} from '../components';
 import {
   LoginScreen,
   SignupScreen,
+  RegisterPhoneScreen,
+  ForgotPasswordScreen,
+  ResetPasswordScreen,
   LogoScreen,
   HomeScreen,
   OrderNowScreen,
@@ -30,17 +33,36 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={TestingPratikComponents}
         options={{header: (props) => null}}
       /> */}
+
+      <Stack.Screen
+        name={AppRoute.REGISTER_PHONE_SCREEN}
+        component={RegisterPhoneScreen}
+        options={{header: props => null}}
+      />
+
+      {/* <Stack.Screen
+        name={AppRoute.RESET_PASSWORD_SCREEN}
+        component={ResetPasswordScreen}
+        options={{header: props => null}}
+      /> */}
+
+      {/* <Stack.Screen
+        name={AppRoute.FORGOT_PASSWORD_SCREEN}
+        component={ForgotPasswordScreen}
+        options={{header: props => null}}
+      /> */}
+
       {/* <Stack.Screen
         name={AppRoute.LOGIN_SCREEN}
         component={LoginScreen}
         options={{header: props => null}}
       /> */}
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.SIGNUP_SCREEN}
         component={SignupScreen}
         options={{header: props => null}}
-      />
+      /> */}
       <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
