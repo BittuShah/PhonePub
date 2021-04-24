@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
 export const StyleIconContainer = styled.TouchableOpacity`
-  height: 25px;
-  width: 25px;
+  height: 28px;
+  width: 28px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : '#f5a927'};
   align-items: center;

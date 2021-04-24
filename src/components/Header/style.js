@@ -10,7 +10,6 @@ export const StyleHeader = styled.View`
   align-items: center;
   background-color: ${props =>
     props.headerBackground ? props.headerBackground : '#fff'};
-  border: 1px solid red;
 `;
 
 export const StyleTextView = styled.View`

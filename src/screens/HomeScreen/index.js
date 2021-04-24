@@ -13,14 +13,16 @@ const HomeScreen = ({route, navigation}) => {
   return (
     <View style={styles.whiteView}>
       <Header
+        // statusBarBackground="#39abee"
         leftIcon="menu"
         // leftText="Hello"
-        // onLeftPress={() => navigation.openDrawer()}
+        // leftIconColor="#000"
+        onLeftPress={() => navigation.openDrawer()}
         headerBackground="#39abee"
-        // statusBarBackground="#39abee"
-        rightIcon="close"
-        // rightIconBg="#3f51b5"
+        rightIcon="call"
+        rightIconColor="#5e5ce6"
         // rightText="skip"
+        rightIconBg="#fff"
         // leftTextColor="red"
         searchEnabled
         primaryText="The Header Screen"

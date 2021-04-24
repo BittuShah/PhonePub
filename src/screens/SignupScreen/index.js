@@ -44,7 +44,7 @@ const SignupScreen = () => {
               iconName="password-key"
               placeHolder="Password"></IconInput>
 
-            <IconInput iconName="phone" placeHolder="Phone"></IconInput>
+            <IconInput iconName="call" placeHolder="Phone"></IconInput>
           </View>
           <Button title="Sign Up" isBold={true} />
           <View style={styles.bottomTextView}>

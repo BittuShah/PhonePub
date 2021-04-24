@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import * as Animatable from 'react-native-animatable';
 import {
   SafeAreaView,
   StatusBar,
@@ -27,12 +28,16 @@ const Header = ({
   leftIcon,
   leftText,
   leftIconBg,
+  leftIconColor,
   leftTextColor,
   rightIcon,
   rightIconBg,
+  rightIconColor,
   rightTextColor,
   rightText,
   primaryText,
+  searchIconColor,
+  searchIconBg,
   primaryTextColor,
   secondaryText,
   secondaryTextColor,
@@ -42,9 +47,23 @@ const Header = ({
   headerBackground,
   statusBarBackground,
 }) => {
+  let [searchInputOpen, setSearchInputOpen] = useState(false);
+  let [headerTextOpen, setHeaderTextOpen] = useState(true);
+
+  const handleSearchOpen = () => {
+    setSearchInputOpen(!searchInputOpen);
+    setHeaderTextOpen(!headerTextOpen);
+  };
+
+  const handleSearchClose = () => {
+    setSearchInputOpen(!searchInputOpen);
+    setHeaderTextOpen(!headerTextOpen);
+  };
+
   return (
     // <SafeAreaView style={{backgroundColor: theme.colors.skyBlue}}>
     <SafeAreaView>
+      {/* status bar */}
       <StatusBar
         backgroundColor={
           statusBarBackground ? statusBarBackground : theme.colors.skyBlue
@@ -52,11 +71,12 @@ const Header = ({
       />
 
       <StyleHeader headerBackground={headerBackground}>
+        {/* left icon and left text */}
         <View style={styles.leftView}>
           {leftIcon && (
             <IconBg
               name={leftIcon}
-              color={theme.colors.WHITE}
+              color={leftIconColor ? leftIconColor : theme.colors.WHITE}
               onPress={onLeftPress}
               backgroundColor={leftIconBg}
             />
@@ -67,65 +87,101 @@ const Header = ({
             </StyleLeftTextButton>
           )}
         </View>
-        <View style={styles.centerView}>
-          {/* <View style={styles.inputView}>
-            <View style={styles.searchIcon}>
-              <Icon name="search" color="#393939" height="15" width="15" />
-            </View>
-            <TextInput
-              style={styles.searchInput}
-              placeholder="Search here..."
-              placeholderTextColor="#abaeb0"
-            />
-            <View style={styles.closeIconView}>
-              <TouchableOpacity style={styles.closeIcon}>
-                <Icon name="close" color="#fff" height="10" width="10" />
-              </TouchableOpacity>
-            </View>
-          </View> */}
-          <View style={{flexDirection: 'row'}}>
-            <StyleTextView>
-              {primaryText && (
-                <CustomText
-                  text={primaryText}
-                  fontSize={theme.fontSize.MEDIUM_LARGE}
-                  // fontFamily={theme.fontFamily.black}
-                  color="#eff0f8"
-                  style={{letterSpacing: 0.5}}
-                />
-              )}
-              {secondaryText && (
-                <CustomText
-                  text={secondaryText}
-                  fontSize={theme.fontSize.NORMAL}
-                  color="#eff0f8"
-                />
-              )}
-            </StyleTextView>
-            {searchEnabled && (
-              <View
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginLeft: 15,
-                }}>
-                <IconBg
-                  name="search"
-                  color={theme.colors.WHITE}
-                  onPress={onLeftPress}
-                  backgroundColor={leftIconBg}
-                />
+
+        <View
+          style={[
+            styles.centerView,
+            {flex: !searchEnabled || searchInputOpen ? 8 : 6},
+          ]}>
+          {/* search input  */}
+          {searchInputOpen ? (
+            <Animatable.View
+              style={[styles.inputView]}
+              animation="fadeInRight"
+              duration={500}>
+              <View style={styles.searchIcon}>
+                <Icon name="search" color="#393939" height="15" width="15" />
               </View>
-            )}
-          </View>
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Search here..."
+                placeholderTextColor="#abaeb0"
+              />
+              <View style={styles.closeIconView}>
+                <TouchableOpacity
+                  style={styles.closeIcon}
+                  onPress={() => handleSearchClose()}>
+                  <Icon name="close" color="#fff" height="10" width="10" />
+                </TouchableOpacity>
+              </View>
+            </Animatable.View>
+          ) : (
+            // header text
+            <View style={{flexDirection: 'row'}}>
+              <StyleTextView>
+                {primaryText && (
+                  <CustomText
+                    text={primaryText}
+                    fontSize={theme.fontSize.HEADING}
+                    fontFamily={theme.fontFamily.medium}
+                    color="#eff0f8"
+                  />
+                )}
+                {secondaryText && (
+                  <CustomText
+                    text={secondaryText}
+                    fontSize={theme.fontSize.NORMAL}
+                    color="#eff0f8"
+                  />
+                )}
+              </StyleTextView>
+            </View>
+          )}
         </View>
-        <View style={styles.rightView}>
+
+        {/* right icon */}
+        <View
+          style={[
+            styles.rightView,
+            {
+              flex: !searchEnabled ? 1 : searchInputOpen ? 1 : 2,
+              alignItems:
+                searchEnabled && searchInputOpen ? 'center' : 'center',
+              flexDirection:
+                searchEnabled && searchInputOpen ? 'column' : 'row',
+              justifyContent:
+                searchEnabled && searchInputOpen ? 'center' : 'flex-end',
+            },
+          ]}>
+          {/* search icon */}
+          {searchEnabled && !searchInputOpen && (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 10,
+              }}>
+              <IconBg
+                name="search"
+                color={searchIconColor ? searchIconColor : theme.colors.WHITE}
+                onPress={() => handleSearchOpen()}
+                backgroundColor={searchIconBg}
+              />
+            </View>
+          )}
+
           {rightIcon && (
             <IconBg
               name={rightIcon}
-              color={theme.colors.WHITE}
+              color={rightIconColor ? rightIconColor : theme.colors.WHITE}
               onPress={onRightPress}
               backgroundColor={rightIconBg}
+              containerStyle={[
+                styles.rightIconStyle,
+                {
+                  marginRight: searchEnabled && searchInputOpen ? -4 : 0,
+                },
+              ]}
             />
           )}
 
@@ -152,16 +208,12 @@ const styles = StyleSheet.create({
   centerView: {
     height: 60,
     // backgroundColor: 'black',
-    flex: 6,
     alignItems: 'center',
     justifyContent: 'center',
   },
   rightView: {
     height: 60,
     // backgroundColor: 'green',
-    flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
   },
 
   inputView: {
@@ -195,6 +247,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  rightIconStyle: {},
 });
 
 export default Header;
