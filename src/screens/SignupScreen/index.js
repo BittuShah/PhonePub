@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {Button, IconInput, Link, Header} from '../../components';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+const {height} = Dimensions.get('window');
 
 const SignupScreen = () => {
   return (
-    <ScrollView
+    <View
       style={{
         backgroundColor: theme.colors.PRIMARY_BLUE,
         flex: 1,
@@ -17,26 +19,38 @@ const SignupScreen = () => {
       />
 
       <View style={styles.whiteView}>
-        <Text style={styles.title}>Registration</Text>
-        <Text style={styles.subTitle}>Fill your account details</Text>
-        <View style={styles.inputContainer}>
-          <IconInput iconName="id-card-fill" placeHolder="Name" />
+        <KeyboardAwareScrollView>
+          <ScrollView style={{paddingHorizontal: 20}}>
+            <Text style={styles.title}>Registration</Text>
+            <Text style={styles.subTitle}>Fill your account details</Text>
+            <View style={styles.inputContainer}>
+              {/* <IconInput iconName="id-card-fill" placeHolder="Name" /> */}
 
-          <IconInput iconName="user-fill" placeHolder="User Name"></IconInput>
-          <IconInput iconName="email-fill" placeHolder="Email"></IconInput>
+              <IconInput iconName="user-fill" placeHolder="Name"></IconInput>
+              <IconInput
+                iconName="email-fill"
+                placeHolder="Email"
+                keyboardType="email-address"></IconInput>
 
-          <IconInput iconName="password-key" placeHolder="Password"></IconInput>
+              <IconInput
+                iconName="password-key"
+                placeHolder="Password"
+                secureTextEntry
+                // keyboardType="visible-password"
+              ></IconInput>
 
-          <IconInput iconName="call" placeHolder="Phone"></IconInput>
-        </View>
-        <Button title="Sign Up" isBold={true} />
-        <View style={styles.bottomTextView}>
-          <Text style={styles.bottomText}>Already have an account?</Text>
-          <Link text="Sign In" />
-        </View>
+              {/* <IconInput iconName="call" placeHolder="Phone"></IconInput> */}
+            </View>
+            <Button title="Register" isBold={true} />
+            <View style={styles.bottomTextView}>
+              <Text style={styles.bottomText}>Already have an account?</Text>
+              <Link text="Sign In" />
+            </View>
+          </ScrollView>
+        </KeyboardAwareScrollView>
       </View>
       {/* </View> */}
-    </ScrollView>
+    </View>
   );
 };
 
@@ -48,7 +62,8 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    paddingHorizontal: 20,
+    // paddingHorizontal: 20,
+    height: height - 100,
     marginTop: 40,
   },
   title: {

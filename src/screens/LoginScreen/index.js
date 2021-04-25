@@ -5,13 +5,15 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 import theme from '../../theme';
 import {Button, IconInput, Link, Header} from '../../components';
+const {height} = Dimensions.get('window');
 
 const LoginScreen = () => {
   return (
-    <ScrollView
+    <View
       style={{
         flex: 1,
         backgroundColor: theme.colors.PRIMARY_BLUE,
@@ -23,47 +25,57 @@ const LoginScreen = () => {
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
       <View style={styles.whiteView}>
-        <Text style={styles.title}>Welcome back</Text>
-        <Text style={styles.subTitle}>Enter your credential login</Text>
+        <ScrollView
+          style={{
+            paddingHorizontal: 20,
+          }}>
+          <Text style={styles.title}>Welcome back</Text>
+          <Text style={styles.subTitle}>Enter your credential login</Text>
 
-        <View style={styles.inputContainer}>
-          <IconInput iconName="user-fill" placeHolder="User Name"></IconInput>
+          <View style={styles.inputContainer}>
+            <IconInput
+              iconName="user-fill"
+              placeHolder="Phone or Email"></IconInput>
 
-          <IconInput iconName="padlock" placeHolder="Password"></IconInput>
-        </View>
-        <Button title="Sign in" isBold={true} />
-        <View style={styles.link}>
-          <Link text="Forgot your password?" />
-        </View>
-
-        <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 30}}>
-          <View
-            style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
-          />
-          <View>
-            <Text
-              style={{
-                width: 40,
-                textAlign: 'center',
-                color: theme.colors.GOLDEN,
-                fontFamily: theme.fontFamily.bold,
-              }}>
-              or
-            </Text>
+            <IconInput
+              iconName="padlock"
+              placeHolder="Password"
+              secureTextEntry></IconInput>
           </View>
-          <View
-            style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
-          />
-        </View>
+          <Button title="Sign in" isBold={true} />
+          <View style={styles.link}>
+            <Link text="Forgot your password?" />
+          </View>
 
-        <TouchableOpacity style={styles.borderButton}>
-          <Text style={{color: '#7d7e80', fontFamily: theme.fontFamily.bold}}>
-            Create an account
-          </Text>
-        </TouchableOpacity>
+          <View
+            style={{flexDirection: 'row', alignItems: 'center', marginTop: 30}}>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
+            />
+            <View>
+              <Text
+                style={{
+                  width: 40,
+                  textAlign: 'center',
+                  color: theme.colors.GOLDEN,
+                  fontFamily: theme.fontFamily.bold,
+                }}>
+                or
+              </Text>
+            </View>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
+            />
+          </View>
+
+          <TouchableOpacity style={styles.borderButton}>
+            <Text style={{color: '#7d7e80', fontFamily: theme.fontFamily.bold}}>
+              Create an account
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -74,8 +86,8 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 30,
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
-    paddingBottom: 40,
-    paddingHorizontal: 20,
+    paddingBottom: 30,
+    height: height - 100,
     marginTop: 40,
   },
   title: {

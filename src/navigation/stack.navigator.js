@@ -16,6 +16,7 @@ import {
   ResetPasswordScreen,
   LogoScreen,
   HomeScreen,
+  ProductDetailScreen,
   OrderNowScreen,
   BuyNowScreen,
   TestingNisargComponents,
@@ -33,11 +34,11 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={TestingPratikComponents}
         options={{header: (props) => null}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.REGISTER_PHONE_SCREEN}
         component={RegisterPhoneScreen}
         options={{header: props => null}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.RESET_PASSWORD_SCREEN}
         component={ResetPasswordScreen}
@@ -58,11 +59,18 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={SignupScreen}
         options={{header: props => null}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
         options={{
           headerShown: false,
+        }}
+      /> */}
+      <Stack.Screen
+        name={AppRoute.PRODUCT_DETAIL_SCREEN}
+        component={ProductDetailScreen}
+        options={{
+          header: props => null,
         }}
       />
       <Stack.Screen

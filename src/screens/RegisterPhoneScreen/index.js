@@ -6,7 +6,7 @@ const {height} = Dimensions.get('window');
 
 const RegisterPhoneScreen = () => {
   return (
-    <ScrollView
+    <View
       style={{
         flex: 1,
         backgroundColor: theme.colors.PRIMARY_BLUE,
@@ -15,19 +15,20 @@ const RegisterPhoneScreen = () => {
         leftIcon="left-arrow"
         rightText="Skip"
         rightTextColor={theme.colors.WHITE}
-        // primaryText="Sign Up"
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
       <View style={styles.whiteView}>
-        <Text style={styles.title}>Register phone</Text>
-        <Text style={styles.subTitle}>Enter your mobile number</Text>
+        <ScrollView style={{paddingHorizontal: 20}}>
+          <Text style={styles.title}>Register phone</Text>
+          <Text style={styles.subTitle}>Enter your mobile number</Text>
 
-        <View style={styles.inputContainer}>
-          <IconInput iconName="call" placeHolder="Phone" />
-        </View>
-        <Button title="Continue" isBold={true} />
+          <View style={styles.inputContainer}>
+            <IconInput iconName="call" placeHolder="Phone" />
+          </View>
+          <Button title="Continue" isBold={true} />
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    paddingHorizontal: 20,
+    // paddingHorizontal: 20,
     height: height - 100,
     marginTop: 40,
   },

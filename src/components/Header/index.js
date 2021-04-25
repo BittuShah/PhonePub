@@ -123,7 +123,8 @@ const Header = ({
                   <CustomText
                     text={primaryText}
                     fontSize={theme.fontSize.HEADING}
-                    fontFamily={theme.fontFamily.medium}
+                    // fontFamily={theme.fontFamily.bold}
+                    isBold={true}
                     color="#eff0f8"
                   />
                 )}

@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {Button, IconInput, Header} from '../../components';
+const {height} = Dimensions.get('window');
 
 const ForgotPasswordScreen = () => {
   return (
-    <ScrollView
+    <View
       style={{
         flex: 1,
         backgroundColor: theme.colors.PRIMARY_BLUE,
@@ -18,17 +19,22 @@ const ForgotPasswordScreen = () => {
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
       <View style={styles.whiteView}>
-        <Text style={styles.title}>Forgot Password?</Text>
-        <Text style={styles.subTitle}>
-          Enter your phone number and get the OTP to reset your password
-        </Text>
+        <ScrollView style={{paddingHorizontal: 20}}>
+          <Text style={styles.title}>Forgot Password?</Text>
+          <Text style={styles.subTitle}>
+            Enter your phone number and get the OTP to reset your password
+          </Text>
 
-        <View style={styles.inputContainer}>
-          <IconInput iconName="phone" placeHolder="Phone"></IconInput>
-        </View>
-        <Button title="Send OTP" isBold={true} />
+          <View style={styles.inputContainer}>
+            <IconInput
+              iconName="call"
+              placeHolder="Phone"
+              keyboardType="numeric"></IconInput>
+          </View>
+          <Button title="Send OTP" isBold={true} />
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -40,7 +46,9 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    paddingHorizontal: 20,
+    height: height - 100,
+
+    // paddingHorizontal: 20,
     marginTop: 40,
   },
   title: {

@@ -3,9 +3,12 @@ import {StyleSheet} from 'react-native';
 // import theme from '../../theme';
 import {StyleContainer, StyleInput} from './style';
 import Icon from './../Icon/index';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 export const IconInput = ({
   placeHolder,
+  keyboardType,
+  secureTextEntry = false,
   onPress,
   backgroundColor,
   iconName,
@@ -19,9 +22,13 @@ export const IconInput = ({
         width="17"
         color="#393939"
       />
-      <StyleInput
-        placeholder={placeHolder}
-        placeholderTextColor="#abaeb0"></StyleInput>
+      <KeyboardAwareScrollView>
+        <StyleInput
+          placeholder={placeHolder}
+          keyboardType={keyboardType}
+          secureTextEntry={secureTextEntry}
+          placeholderTextColor="#abaeb0"></StyleInput>
+      </KeyboardAwareScrollView>
     </StyleContainer>
   );
 };

@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {Button, IconInput, Header} from '../../components';
+const {height} = Dimensions.get('window');
 
 const ResetPasswordScreen = () => {
   return (
-    <ScrollView
+    <View
       style={{
         flex: 1,
         backgroundColor: theme.colors.PRIMARY_BLUE,
@@ -18,18 +19,24 @@ const ResetPasswordScreen = () => {
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
       <View style={styles.whiteView}>
-        <Text style={styles.title}>Reset Password</Text>
-        <Text style={styles.subTitle}>Enter new password</Text>
+        <ScrollView style={{paddingHorizontal: 20}}>
+          <Text style={styles.title}>Reset Password</Text>
+          <Text style={styles.subTitle}>Enter new password</Text>
 
-        <View style={styles.inputContainer}>
-          <IconInput iconName="padlock" placeHolder="New Password"></IconInput>
-          <IconInput
-            iconName="padlock"
-            placeHolder="Confirm Password"></IconInput>
-        </View>
-        <Button title="Save Password" isBold={true} />
+          <View style={styles.inputContainer}>
+            <IconInput
+              iconName="padlock"
+              placeHolder="New Password"
+              secureTextEntry></IconInput>
+            <IconInput
+              iconName="padlock"
+              placeHolder="Confirm Password"
+              secureTextEntry></IconInput>
+          </View>
+          <Button title="Save Password" isBold={true} />
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -40,8 +47,10 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 30,
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
-    paddingBottom: 40,
-    paddingHorizontal: 20,
+    paddingBottom: 30,
+    // paddingHorizontal: 20,
+    height: height - 100,
+
     marginTop: 40,
   },
   title: {
