@@ -7,6 +7,9 @@ import CustomDrawer from './CustomDrawer';
 // AUTH SCREENS
 import SignupScreen from './SignupScreen';
 import LoginScreen from './LoginScreen';
+import RegisterPhoneScreen from './RegisterPhoneScreen';
+import ForgotPasswordScreen from './ForgotPasswordScreen';
+import ResetPasswordScreen from './ResetPasswordScreen';
 
 //DEFAULT
 import LogoScreen from './LogoScreen';
@@ -29,6 +32,9 @@ export {
   LogoScreen,
   SignupScreen,
   LoginScreen,
+  RegisterPhoneScreen,
+  ForgotPasswordScreen,
+  ResetPasswordScreen,
   HomeScreen,
   OrderNowScreen,
   BuyNowScreen,

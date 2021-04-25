@@ -13,8 +13,8 @@ const Link = ({text}) => {
 const styles = StyleSheet.create({
   viewStyle: {},
   link: {
-    color: theme.colors.skyBlue,
-    fontWeight: 'bold',
+    color: theme.colors.PRIMARY_BLUE,
+    fontFamily: theme.fontFamily.bold,
     fontSize: 17,
   },
 });

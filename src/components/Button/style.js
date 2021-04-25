@@ -9,7 +9,7 @@ export const StyleButton = styled.TouchableOpacity`
   width: 100%;
   border-radius: 50px;
   background-color: ${props =>
-    props.backgroundColor ? props.backgroundColor : theme.colors.skyBlue};
+    props.backgroundColor ? props.backgroundColor : theme.colors.PRIMARY_BLUE};
   color: ${props => (props.color ? props.color : theme.colors.WHITE)};
 `;
 // margin-top: 60px;
