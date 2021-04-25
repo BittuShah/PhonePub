@@ -42,7 +42,7 @@ const LoginScreen = () => {
               placeHolder="Password"
               secureTextEntry></IconInput>
           </View>
-          <Button title="Sign in" isBold={true} />
+          <Button title="Sign in" fontFamily={theme.fontFamily.bold} />
           <View style={styles.link}>
             <Link text="Forgot your password?" />
           </View>

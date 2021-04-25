@@ -31,7 +31,7 @@ const ForgotPasswordScreen = () => {
               placeHolder="Phone"
               keyboardType="numeric"></IconInput>
           </View>
-          <Button title="Send OTP" isBold={true} />
+          <Button title="Send OTP" fontFamily={theme.fontFamily.bold} />
         </ScrollView>
       </View>
     </View>

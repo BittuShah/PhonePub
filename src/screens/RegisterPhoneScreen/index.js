@@ -25,7 +25,7 @@ const RegisterPhoneScreen = () => {
           <View style={styles.inputContainer}>
             <IconInput iconName="call" placeHolder="Phone" />
           </View>
-          <Button title="Continue" isBold={true} />
+          <Button title="Continue" fontFamily={theme.fontFamily.bold} />
         </ScrollView>
       </View>
     </View>
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    // paddingHorizontal: 20,
-    height: height - 100,
+    paddingHorizontal: 20,
+    height: height - 130,
     marginTop: 40,
   },
   title: {

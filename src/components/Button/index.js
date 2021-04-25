@@ -1,14 +1,16 @@
 import React from 'react';
 import theme from '../../theme';
-import {CustomText} from '../commonComponents';
+import {CustomText} from '../';
 import {StyleButton} from './style';
 
-export const Button = ({title, onPress, isBold}) => {
+export const Button = ({title, onPress, fontFamily}) => {
   return (
     <StyleButton onPress={onPress}>
-      <CustomText color={theme.colors.WHITE} isBold={isBold}>
-        {title}
-      </CustomText>
+      <CustomText
+        color={theme.colors.WHITE}
+        fontFamily={fontFamily}
+        text={title}
+      />
     </StyleButton>
   );
 };

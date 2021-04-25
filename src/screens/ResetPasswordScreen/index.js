@@ -33,7 +33,7 @@ const ResetPasswordScreen = () => {
               placeHolder="Confirm Password"
               secureTextEntry></IconInput>
           </View>
-          <Button title="Save Password" isBold={true} />
+          <Button title="Save Password" fontFamily={theme.fontFamily.bold} />
         </ScrollView>
       </View>
     </View>
