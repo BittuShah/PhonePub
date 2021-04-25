@@ -64,8 +64,7 @@ export const PhonePubStackScreen = ({navigation}) => {
         options={{
           headerShown: false,
         }}
-      />{' '}
-      */}
+      />
       <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}

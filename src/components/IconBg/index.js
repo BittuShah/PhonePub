@@ -8,7 +8,7 @@ const IconBg = ({name, color, backgroundColor, onPress, containerStyle}) => {
       backgroundColor={backgroundColor}
       onPress={onPress}
       style={containerStyle}>
-      <Icon name={name} color={color} height="12" width="12" />
+      <Icon name={name} color={color} height="14" width="14" />
     </StyleIconContainer>
   );
 };
