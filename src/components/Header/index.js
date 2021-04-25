@@ -187,7 +187,11 @@ const Header = ({
 
           {rightText && (
             <StyleRightTextButton onPress={onRightPress}>
-              <CustomText text={rightText} color={rightTextColor} />
+              <CustomText
+                text={rightText}
+                isBold={true}
+                color={rightTextColor}
+              />
             </StyleRightTextButton>
           )}
         </View>

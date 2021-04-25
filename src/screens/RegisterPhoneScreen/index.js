@@ -13,6 +13,8 @@ const RegisterPhoneScreen = () => {
       }}>
       <Header
         leftIcon="left-arrow"
+        rightText="Skip"
+        rightTextColor={theme.colors.WHITE}
         // primaryText="Sign Up"
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
