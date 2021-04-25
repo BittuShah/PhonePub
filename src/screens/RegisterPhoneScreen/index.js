@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {Button, IconInput, Header} from '../../components';
+const {height} = Dimensions.get('window');
 
 const RegisterPhoneScreen = () => {
   return (
@@ -9,8 +10,6 @@ const RegisterPhoneScreen = () => {
       style={{
         flex: 1,
         backgroundColor: theme.colors.PRIMARY_BLUE,
-        paddingVertical: 10,
-        height: 100,
       }}>
       <Header
         leftIcon="left-arrow"
@@ -24,7 +23,7 @@ const RegisterPhoneScreen = () => {
         <Text style={styles.subTitle}>Enter your mobile number</Text>
 
         <View style={styles.inputContainer}>
-          <IconInput iconName="phone" placeHolder="Phone" />
+          <IconInput iconName="call" placeHolder="Phone" />
         </View>
         <Button title="Continue" isBold={true} />
       </View>
@@ -41,6 +40,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 40,
     paddingHorizontal: 20,
+    height: height - 100,
     marginTop: 40,
   },
   title: {
