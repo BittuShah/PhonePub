@@ -6,7 +6,7 @@ export const StyleHeader = styled.View`
   justify-content: space-between;
   color: ${theme.colors.WHITE};
   padding-horizontal: 15px;
-  height: 60px;
+  height: 90px;
   align-items: center;
   background-color: ${props =>
     props.headerBackground ? props.headerBackground : '#fff'};

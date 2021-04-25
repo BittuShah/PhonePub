@@ -124,14 +124,14 @@ const Header = ({
                     text={primaryText}
                     fontSize={theme.fontSize.HEADING}
                     fontFamily={theme.fontFamily.medium}
-                    color="#eff0f8"
+                    color={primaryTextColor ? primaryTextColor : '#eff0f8'}
                   />
                 )}
                 {secondaryText && (
                   <CustomText
                     text={secondaryText}
                     fontSize={theme.fontSize.NORMAL}
-                    color="#eff0f8"
+                    color={secondaryColor ? secondaryColor : '#eff0f8'}
                   />
                 )}
               </StyleTextView>

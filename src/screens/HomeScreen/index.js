@@ -29,14 +29,15 @@ const HomeScreen = ({route, navigation}) => {
       <Header
         leftIcon="menu"
         onLeftPress={() => navigation.openDrawer()}
-        headerBackground="#39abee"
+        headerBackground="#f8f8f8"
         rightIcon="cart"
-        rightIconColor="#39abee"
-        rightIconBg="#fff"
+        rightIconColor="#fff"
+        rightIconBg="#39abee"
         searchEnabled
+        primaryTextColor={theme.colors.TITLE}
         primaryText="Phone Pub"
       />
-      <StyleContentContainer>
+      <StyleContentContainer style={styles.contentContainer}>
         <StyleCategoriedContainer>
           <CategoriesListing
             options={categories}
@@ -51,6 +52,12 @@ const HomeScreen = ({route, navigation}) => {
     </StyleMainContainer>
   );
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  contentContainer: {
+    borderTopEndRadius: 30,
+    borderTopStartRadius: 30,
+    backgroundColor: theme.colors.WHITE,
+  },
+});
 
 export default HomeScreen;

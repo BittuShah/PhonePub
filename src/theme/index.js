@@ -21,7 +21,7 @@ export default theme = {
     GREY5: '#f8f8f8',
     WHITE_FADE: 'rgba(255, 255, 255, 0.6)',
     BLACK: '#000',
-    black: '#000',
+    black: '#000', // #1A1A1A
     BACKGROUND_COLOR: '#EEEFF1',
     BLUE: '#0079B8',
     PRIMARY_BLUE: '#39abee',
