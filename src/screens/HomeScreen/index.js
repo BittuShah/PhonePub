@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,38 +6,51 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import {Header, IconBg} from '../../components';
+import {
+  Header,
+  IconBg,
+  CategoriesListing,
+  ProductsListing,
+} from '../../components';
+import {
+  StyleCategoriedContainer,
+  StyleContentContainer,
+  StyleMainContainer,
+  StyleProductsContainer,
+} from './style';
 import theme from '../../theme';
+import {categories, products} from '../../lib/dummyData';
 
 const HomeScreen = ({route, navigation}) => {
+  const [selectedCategory, setSelectedCategory] = useState(0);
+
   return (
-    <View style={styles.whiteView}>
+    <StyleMainContainer>
       <Header
-        // statusBarBackground="#39abee"
         leftIcon="menu"
-        // leftText="Hello"
-        // leftIconColor="#000"
         onLeftPress={() => navigation.openDrawer()}
         headerBackground="#39abee"
-        rightIcon="call"
-        rightIconColor="#5e5ce6"
-        // rightText="skip"
+        rightIcon="cart"
+        rightIconColor="#39abee"
         rightIconBg="#fff"
-        // leftTextColor="red"
         searchEnabled
-        primaryText="The Header Screen"
-        secondaryText="Hello world"
+        primaryText="Phone Pub"
       />
-    </View>
+      <StyleContentContainer>
+        <StyleCategoriedContainer>
+          <CategoriesListing
+            options={categories}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </StyleCategoriedContainer>
+        <StyleProductsContainer>
+          <ProductsListing products={products} />
+        </StyleProductsContainer>
+      </StyleContentContainer>
+    </StyleMainContainer>
   );
 };
-const styles = StyleSheet.create({
-  whiteView: {
-    flex: 1,
-    backgroundColor: '#39abee',
-    // paddingVertical: 50,
-    // paddingHorizontal: 50,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default HomeScreen;

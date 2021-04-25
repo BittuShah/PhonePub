@@ -27,7 +27,7 @@ const ResetPasswordScreen = () => {
             iconName="padlock"
             placeHolder="Confirm Password"></IconInput>
         </View>
-        <Button title="Save Password" isBold={true} />
+        <Button title="Save Password" fontFamily={theme.fontFamily.bold} />
       </View>
     </ScrollView>
   );

@@ -9,6 +9,8 @@ import {IconInput} from './IconInput';
 import {Link} from './Link';
 import IconBg from './IconBg';
 import CustomText from './CustomText';
+import CategoriesListing from './CategoriesListing';
+import ProductsListing from './ProductsListing';
 
 export {
   CustomText,
@@ -20,4 +22,6 @@ export {
   IconInput,
   Link,
   IconBg,
+  CategoriesListing,
+  ProductsListing,
 };

@@ -29,7 +29,7 @@ const SignupScreen = () => {
 
           <IconInput iconName="call" placeHolder="Phone"></IconInput>
         </View>
-        <Button title="Sign Up" isBold={true} />
+        <Button title="Sign Up" fontFamily={theme.fontFamily.bold} />
         <View style={styles.bottomTextView}>
           <Text style={styles.bottomText}>Already have an account?</Text>
           <Link text="Sign In" />

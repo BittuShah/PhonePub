@@ -23,7 +23,7 @@ const RegisterPhoneScreen = () => {
         <View style={styles.inputContainer}>
           <IconInput iconName="call" placeHolder="Phone" />
         </View>
-        <Button title="Continue" isBold={true} />
+        <Button title="Continue" fontFamily={theme.fontFamily.bold} />
       </View>
     </ScrollView>
   );
