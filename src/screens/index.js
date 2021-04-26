@@ -10,6 +10,7 @@ import LoginScreen from './LoginScreen';
 import RegisterPhoneScreen from './RegisterPhoneScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import ResetPasswordScreen from './ResetPasswordScreen';
+import OtpScreen from './OtpScreen';
 
 //DEFAULT
 import LogoScreen from './LogoScreen';
@@ -45,4 +46,5 @@ export {
   AboutScreen,
   ContactScreen,
   RateScreen,
+  OtpScreen,
 };

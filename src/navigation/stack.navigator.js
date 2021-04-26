@@ -21,6 +21,7 @@ import {
   BuyNowScreen,
   TestingNisargComponents,
   TestingPratikComponents,
+  OtpScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -66,11 +67,18 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.PRODUCT_DETAIL_SCREEN}
         component={ProductDetailScreen}
         options={{
           header: props => null,
+        }}
+      /> */}
+      <Stack.Screen
+        name={AppRoute.OTP_SCREEN}
+        component={OtpScreen}
+        options={{
+          headerShown: false,
         }}
       />
       <Stack.Screen
