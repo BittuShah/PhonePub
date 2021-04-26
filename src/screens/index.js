@@ -18,6 +18,7 @@ import LogoScreen from './LogoScreen';
 // APP ROUTES
 import HomeScreen from './HomeScreen';
 import ProductDetailScreen from './ProductDetailScreen';
+import CartScreen from './CartScreen';
 import OrderNowScreen from './OrderNowScreen';
 import BuyNowScreen from './BuyNowScreen';
 import MyOrderScreen from './MyOrderScreen';
@@ -47,4 +48,5 @@ export {
   ContactScreen,
   RateScreen,
   OtpScreen,
+  CartScreen,
 };

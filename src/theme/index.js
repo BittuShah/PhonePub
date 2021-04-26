@@ -10,7 +10,6 @@ export default theme = {
     GREEN_LIGHT: '#21e600',
 
     //DEVELOPER COLORS
-    PRIMARY_COLOR: '#2aabb8',
     GOLDEN: '#f5a927',
     WHITE: '#ffffff',
     PLACE_HOLDER_TEXT_COLOR: '#c9c9c9',
@@ -20,11 +19,12 @@ export default theme = {
     GREY4: '#e9e9e9',
     GREY5: '#f8f8f8',
     WHITE_FADE: 'rgba(255, 255, 255, 0.6)',
-    BLACK: '#000',
-    black: '#000', // #1A1A1A
+    BLACK: '#3e454b',
+    black: '#3e454b', // #1A1A1A
     BACKGROUND_COLOR: '#EEEFF1',
     BLUE: '#0079B8',
     PRIMARY_BLUE: '#39abee',
+    SCREEN_WHITE: '#f8f8f8',
     TITLE: '#394046',
     SUB_TITLE: '#a4a8ab',
     skyBlue: '#1E96E0',

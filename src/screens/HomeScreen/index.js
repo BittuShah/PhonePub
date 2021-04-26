@@ -29,10 +29,10 @@ const HomeScreen = ({route, navigation}) => {
       <Header
         leftIcon="menu"
         onLeftPress={() => navigation.openDrawer()}
-        headerBackground="#f8f8f8"
+        headerBackground={theme.colors.SCREEN_WHITE}
         rightIcon="cart"
         rightIconColor="#fff"
-        rightIconBg="#39abee"
+        rightIconBg={theme.colors.PRIMARY_BLUE}
         searchEnabled
         primaryTextColor={theme.colors.TITLE}
         primaryText="Phone Pub"
