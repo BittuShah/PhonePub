@@ -3,9 +3,9 @@ import theme from '../../theme';
 import {CustomText} from '../';
 import {StyleButton} from './style';
 
-export const Button = ({title, onPress, fontFamily}) => {
+export const Button = ({title, onPress, fontFamily, containerStyle}) => {
   return (
-    <StyleButton onPress={onPress}>
+    <StyleButton onPress={onPress} style={containerStyle}>
       <CustomText
         color={theme.colors.WHITE}
         fontFamily={fontFamily}

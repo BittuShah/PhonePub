@@ -25,6 +25,7 @@ export default theme = {
     BLUE: '#0079B8',
     PRIMARY_BLUE: '#39abee',
     SCREEN_WHITE: '#f8f8f8',
+    BODY_TITLE: '#3e454b',
     TITLE: '#394046',
     SUB_TITLE: '#a4a8ab',
     skyBlue: '#1E96E0',

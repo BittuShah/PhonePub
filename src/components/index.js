@@ -12,6 +12,8 @@ import CustomText from './CustomText';
 import CategoriesListing from './CategoriesListing';
 import ProductsListing from './ProductsListing';
 import CartProductsListing from './CartProductsListing';
+import BodyTitle from './BodyTitle';
+import AddNewItem from './AddNewItem';
 
 export {
   CustomText,
@@ -26,4 +28,6 @@ export {
   CategoriesListing,
   ProductsListing,
   CartProductsListing,
+  BodyTitle,
+  AddNewItem,
 };

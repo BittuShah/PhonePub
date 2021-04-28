@@ -5,13 +5,16 @@ import {Platform} from 'react-native';
 export const StyleButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
-  padding: ${Platform.OS === 'ios' ? '0px' : '12px'};
+  padding: 12px;
   width: 100%;
   border-radius: 50px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : theme.colors.PRIMARY_BLUE};
   color: ${props => (props.color ? props.color : theme.colors.WHITE)};
+  elevation: 2;
 `;
 // margin-top: 60px;
 // margin-horizontal: 40px;
 // height: 35px;
+
+// padding: ${Platform.OS === 'ios' ? '0px' : '12px'};

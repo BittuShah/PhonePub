@@ -74,3 +74,37 @@ export const products = [
     category: ['Selfie Sticks'],
   },
 ];
+
+export const deliveryAddress = [
+  {
+    id: '1',
+    name: 'Pratik Panchal',
+    address:
+      'Gandhi n tya, Rathod na sasariya ni baju ma, Lal Darwaja, Patan, Gujarat, 384265',
+  },
+  {
+    id: '2',
+    name: 'Parshv Shah',
+    address: 'Khearvasi, Blood Bank, Patan, Gujarat, 384265',
+  },
+  {
+    id: '3',
+    name: 'Karan Rajpurohit',
+    address: 'Gom na chede, Patan, Gujarat, 384265',
+  },
+  {
+    id: '4',
+    name: 'Meet Rathod',
+    address: 'Ambaji Neliyu, Patan, Gujarat, 384265',
+  },
+  {
+    id: '5',
+    name: 'Nisarg Patel',
+    address: 'Chindiya, Known as Paris, Patan, Gujarat, 384265',
+  },
+  {
+    id: '6',
+    name: 'Yuvraj Vaghela',
+    address: 'Harij ni baju na gomde, Patan, Gujarat, 384265',
+  },
+];

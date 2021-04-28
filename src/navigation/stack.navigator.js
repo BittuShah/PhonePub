@@ -23,6 +23,7 @@ import {
   TestingPratikComponents,
   OtpScreen,
   CartScreen,
+  DeliveryAddressScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -61,9 +62,16 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={SignupScreen}
         options={{header: props => null}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.NISARG_TEST}
         component={TestingNisargComponents}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+      <Stack.Screen
+        name={AppRoute.DELIVERY_ADDRESS_SCREEN}
+        component={DeliveryAddressScreen}
         options={{
           headerShown: false,
         }}
