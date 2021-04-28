@@ -73,13 +73,13 @@ export const PhonePubStackScreen = ({navigation}) => {
           header: props => null,
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
       <Stack.Screen
         name={AppRoute.ORDER_NOW_SCREEN}
         component={OrderNowScreen}

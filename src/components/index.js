@@ -11,6 +11,7 @@ import IconBg from './IconBg';
 import CustomText from './CustomText';
 import CategoriesListing from './CategoriesListing';
 import ProductsListing from './ProductsListing';
+import Quantity from './Quantity';
 
 export {
   CustomText,
@@ -24,4 +25,5 @@ export {
   IconBg,
   CategoriesListing,
   ProductsListing,
+  Quantity,
 };
