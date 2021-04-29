@@ -33,11 +33,11 @@ export const PhonePubStackScreen = ({navigation}) => {
   return (
     // Testing Purpose Only
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.PARSHV_TEST}
         component={TestingParshvComponents}
         options={{header: props => null}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.REGISTER_PHONE_SCREEN}
         component={RegisterPhoneScreen}

@@ -23,6 +23,7 @@ export const products = [
     image: require('../assets/mobile_covers.png'),
     price: 200,
     category: ['Mobile Covers'],
+    quantity: 3,
   },
   {
     id: '2',
@@ -30,6 +31,7 @@ export const products = [
     image: require('../assets/headephones.png'),
     price: 2000,
     category: ['Head Phones'],
+    quantity: 1,
   },
   {
     id: '3',
@@ -37,6 +39,7 @@ export const products = [
     image: require('../assets/oppo_ring.png'),
     price: 50,
     category: ['Phone Ring Holder'],
+    quantity: 5,
   },
   {
     id: '4',
@@ -44,6 +47,7 @@ export const products = [
     image: require('../assets/car_mount.png'),
     price: 300,
     category: ['Car Mounts'],
+    quantity: 3,
   },
   {
     id: '5',
@@ -51,6 +55,7 @@ export const products = [
     image: require('../assets/otg.png'),
     price: 1000,
     category: ['OTG Cable'],
+    quantity: 1,
   },
   {
     id: '6',
@@ -58,6 +63,7 @@ export const products = [
     image: require('../assets/usb.png'),
     price: 400,
     category: ['OTG Cable', 'USB'],
+    quantity: 10,
   },
   {
     id: '7',
@@ -65,6 +71,7 @@ export const products = [
     image: require('../assets/smart_watch.png'),
     price: 1500,
     category: ['Smartwatches'],
+    quantity: 3,
   },
   {
     id: '8',
@@ -72,6 +79,7 @@ export const products = [
     image: require('../assets/selfie_stick.png'),
     price: 4000,
     category: ['Selfie Sticks'],
+    quantity: 9,
   },
 ];
 
