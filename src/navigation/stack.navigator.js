@@ -21,6 +21,7 @@ import {
   BuyNowScreen,
   TestingNisargComponents,
   TestingPratikComponents,
+  TestingParshvComponents,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -29,11 +30,11 @@ export const PhonePubStackScreen = ({navigation}) => {
   return (
     // Testing Purpose Only
     <Stack.Navigator>
-      {/* <Stack.Screen
-        name={AppRoute.PRATIK_TEST}
-        component={TestingPratikComponents}
-        options={{header: (props) => null}}
-      /> */}
+      <Stack.Screen
+        name={AppRoute.PARSHV_TEST}
+        component={TestingParshvComponents}
+        options={{header: props => null}}
+      />
       {/* <Stack.Screen
         name={AppRoute.REGISTER_PHONE_SCREEN}
         component={RegisterPhoneScreen}
@@ -66,13 +67,13 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.PRODUCT_DETAIL_SCREEN}
         component={ProductDetailScreen}
         options={{
           header: props => null,
         }}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}

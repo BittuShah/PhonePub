@@ -12,12 +12,14 @@ import theme from '../../theme';
 const Quantity = ({quantity}) => {
   return (
     <View style={styles.container}>
-      <Icon
-        name={quantity > 1 ? 'remove' : 'trash-can'}
-        height="15"
-        width="15"
-        color={quantity > 1 && theme.colors.GOLDEN}
-      />
+      <TouchableOpacity>
+        <Icon
+          name={quantity > 1 ? 'remove' : 'trash-can'}
+          height="15"
+          width="15"
+          color={quantity > 1 && theme.colors.GOLDEN}
+        />
+      </TouchableOpacity>
       {/* <Icon name="remove" height="18" width="18" color={theme.colors.GOLDEN} /> */}
       <CustomText
         text={quantity}
@@ -27,7 +29,9 @@ const Quantity = ({quantity}) => {
         style={{height: 20}}
       />
       {/* <Text style={{borderWidth: 1}}>H</Text> */}
-      <Icon name="add" height="15" width="15" color={theme.colors.GOLDEN} />
+      <TouchableOpacity>
+        <Icon name="add" height="15" width="15" color={theme.colors.GOLDEN} />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderColor: '#f5f5f5',
     // ALIContent: 'center',
-    borderColor: '#f3f4f5',
+    borderColor: '#dbdcdd',
     paddingHorizontal: 5,
     paddingVertical: 15,
     borderRadius: 50,

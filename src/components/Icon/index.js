@@ -1086,6 +1086,24 @@ export default class Icon extends Component {
           </G>
         </Svg>
       );
+    } else if (name === 'download') {
+      return (
+        <Svg
+          height={height ? height : '20'}
+          width={width ? width : '20'}
+          viewBox="0 0 512 512">
+          <G id="Solid">
+            <Path
+              fill={color ? color : theme.colors.black}
+              d="m239.029 384.97a24 24 0 0 0 33.942 0l90.509-90.509a24 24 0 0 0 0-33.941 24 24 0 0 0 -33.941 0l-49.539 49.539v-262.059a24 24 0 0 0 -48 0v262.059l-49.539-49.539a24 24 0 0 0 -33.941 0 24 24 0 0 0 0 33.941z"
+            />
+            <Path
+              fill={color ? color : theme.colors.black}
+              d="m464 232a24 24 0 0 0 -24 24v184h-368v-184a24 24 0 0 0 -48 0v192a40 40 0 0 0 40 40h384a40 40 0 0 0 40-40v-192a24 24 0 0 0 -24-24z"
+            />
+          </G>
+        </Svg>
+      );
     }
   }
 }

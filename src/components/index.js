@@ -12,6 +12,7 @@ import CustomText from './CustomText';
 import CategoriesListing from './CategoriesListing';
 import ProductsListing from './ProductsListing';
 import Quantity from './Quantity';
+import CartItem from './CartItem';
 
 export {
   CustomText,
@@ -26,4 +27,5 @@ export {
   CategoriesListing,
   ProductsListing,
   Quantity,
+  CartItem,
 };
