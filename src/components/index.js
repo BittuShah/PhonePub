@@ -14,6 +14,8 @@ import ProductsListing from './ProductsListing';
 import CartProductsListing from './CartProductsListing';
 import BodyTitle from './BodyTitle';
 import AddNewItem from './AddNewItem';
+import Quantity from './Quantity';
+import CartItem from './CartItem';
 
 export {
   CustomText,
@@ -30,4 +32,6 @@ export {
   CartProductsListing,
   BodyTitle,
   AddNewItem,
+  Quantity,
+  CartItem,
 };
