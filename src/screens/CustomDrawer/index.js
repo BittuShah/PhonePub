@@ -6,7 +6,6 @@ import {
 } from '@react-navigation/drawer';
 import {CustomText, Divider, Icon} from '../../components/';
 import {StyleDrawerHeaderView, StyleLeftView, StyleRightView} from './style';
-import {generateGreetings} from '../../lib/helper';
 
 const CustomDrawer = props => {
   return (
@@ -17,7 +16,7 @@ const CustomDrawer = props => {
           <Icon name="dropdown" />
         </StyleLeftView>
         <StyleRightView>
-          <CustomText bold>{generateGreetings()}</CustomText>
+          <CustomText bold>Good Morning</CustomText>
           <CustomText>John Doe</CustomText>
         </StyleRightView>
       </StyleDrawerHeaderView>

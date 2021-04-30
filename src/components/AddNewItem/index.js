@@ -6,7 +6,7 @@ import theme from '../../theme';
 const AddNewItem = ({title, onPress}) => {
   return (
     <TouchableOpacity style={styles.mainView} onPress={onPress}>
-      <Icon name="left-arrow" color={theme.colors.GOLDEN} />
+      <Icon name="add" color={theme.colors.GOLDEN} height="15" width="15" />
       <CustomText
         text={title}
         style={styles.text}

@@ -1,34 +1,18 @@
 import React from 'react';
 import {StyleSheet, View, FlatList, Image} from 'react-native';
-import {CustomText} from '../';
+import {CustomText, CartItem} from '../';
 import {products} from '../../lib/dummyData';
 
 const CartProductsListing = () => {
-  const RenderProduct = ({product, index}) => {
-    return (
-      <View style={styles.productView}>
-        <View style={styles.imageView}>
-          <Image
-            style={styles.image}
-            source={require('../../assets/headephones.png')}
-          />
-        </View>
-        <View style={styles.detailsView}></View>
-        <View style={styles.deleteView}></View>
-      </View>
-    );
-  };
   return (
     <FlatList
       data={products}
-      key="_"
       showsVerticalScrollIndicator={false}
       scrollEnabled={true}
-      keyExtractor={item => '_' + item.id}
+      keyExtractor={item => item.id}
       renderItem={({item, index}) => (
-        <RenderProduct key={index} product={item} index={index} />
+        <CartItem key={index} product={item} index={index} />
       )}
-      numColumns={2}
       ListEmptyComponent={
         <View
           style={{
