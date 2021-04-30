@@ -6,14 +6,15 @@ import theme from '../../theme';
 const StyleContainer = styled.View`
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   border-radius: 17px;
   padding-horizontal: 15px;
+  align-items: center;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : theme.colors.GREY5};
   margin-bottom: 25px;
-  height: 55px;
 `;
+// padding-top: 5px
+// height: 55px;
 
 const StyleInput = styled.TextInput`
   flex: 1;
@@ -22,6 +23,8 @@ const StyleInput = styled.TextInput`
   font-size: 15px;
   color: ${props => (props.color ? props.color : theme.colors.black)};
 `;
+// text-align-vertical: top;
+// justify-content: flex-start;
 // background-color: ${theme.colors.GREY5};
 
 // const StyleIcon = Icon`

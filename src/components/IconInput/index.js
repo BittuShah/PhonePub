@@ -12,6 +12,8 @@ export const IconInput = ({
   onPress,
   backgroundColor,
   iconName,
+  multiline = false,
+  numberOfLines,
 }) => {
   return (
     <StyleContainer>
@@ -27,6 +29,8 @@ export const IconInput = ({
           placeholder={placeHolder}
           keyboardType={keyboardType}
           secureTextEntry={secureTextEntry}
+          multiline={multiline}
+          numberOfLines={numberOfLines}
           placeholderTextColor="#abaeb0"></StyleInput>
       </KeyboardAwareScrollView>
     </StyleContainer>
@@ -39,5 +43,6 @@ const styles = StyleSheet.create({
     width: 100,
     resizeMode: 'stretch',
     alignItems: 'center',
+    // textAlignVertical
   },
 });

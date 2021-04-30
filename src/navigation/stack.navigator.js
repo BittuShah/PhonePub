@@ -24,6 +24,7 @@ import {
   OtpScreen,
   CartScreen,
   DeliveryAddressScreen,
+  AddressScreen,
   TestingParshvComponents,
 } from '../screens';
 
@@ -73,6 +74,14 @@ export const PhonePubStackScreen = ({navigation}) => {
       {/* <Stack.Screen
         name={AppRoute.DELIVERY_ADDRESS_SCREEN}
         component={DeliveryAddressScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+
+      {/* <Stack.Screen
+        name={AppRoute.ADDRESS_SCREEN}
+        component={AddressScreen}
         options={{
           headerShown: false,
         }}

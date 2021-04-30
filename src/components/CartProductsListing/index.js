@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View, FlatList, Image} from 'react-native';
 import {CustomText, CartItem} from '../';
 import {products} from '../../lib/dummyData';
+import theme from './../../theme';
 
 const CartProductsListing = () => {
   return (
@@ -11,7 +12,34 @@ const CartProductsListing = () => {
       scrollEnabled={true}
       keyExtractor={item => item.id}
       renderItem={({item, index}) => (
-        <CartItem key={index} product={item} index={index} />
+        <View>
+          <CartItem key={index} product={item} index={index} />
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              // marginTop: 10,
+              marginBottom: 10,
+            }}>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GREY4}}
+            />
+            {/* <View>
+              <Text
+                style={{
+                  width: 40,
+                  textAlign: 'center',
+                  color: theme.colors.GOLDEN,
+                  fontFamily: theme.fontFamily.bold,
+                }}>
+                or
+              </Text>
+            </View>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
+            /> */}
+          </View>
+        </View>
       )}
       ListEmptyComponent={
         <View

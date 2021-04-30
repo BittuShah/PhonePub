@@ -85,21 +85,37 @@ const CartItem = ({product, index}) => {
           <Icon name="close" color="#fff" height="10" width="10" />
         </TouchableOpacity>
       </View>
+
+      {/* <View
+            style={{flexDirection: 'row', alignItems: 'center', marginTop: 30}}>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
+            />
+            <View>
+              <Text
+                style={{
+                  width: 40,
+                  textAlign: 'center',
+                  color: theme.colors.GOLDEN,
+                  fontFamily: theme.fontFamily.bold,
+                }}>
+                or
+              </Text>
+            </View>
+            <View
+              style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
+            />
+          </View> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  //   itemsView: {
-  //     height: height - 310,
-
-  //     // backgroundColor: 'red',
-  //   },
   itemContainer: {
     flexDirection: 'row',
     height: 70,
     justifyContent: 'space-between',
-    marginBottom: 15,
+    marginBottom: 10,
   },
   imageView: {
     backgroundColor: theme.colors.GREY4,

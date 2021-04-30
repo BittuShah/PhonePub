@@ -52,61 +52,21 @@ const CartScreen = ({route, navigation}) => {
       />
       <View style={styles.main}>
         <View style={styles.cartTitleView}>
-          {!searchInputOpen && (
-            <CustomText
-              text="Cart"
-              fontFamily={theme.fontFamily.bold}
-              fontSize="25"
-              color={theme.colors.TITLE}
-            />
-          )}
-          {searchInputOpen ? (
-            <Animatable.View
-              style={[styles.inputView]}
-              animation="fadeInRight"
-              duration={500}>
-              <View style={styles.searchIcon}>
-                <Icon name="search" color="#393939" height="15" width="15" />
-              </View>
-              <TextInput
-                style={styles.searchInput}
-                placeholder="Search here..."
-                placeholderTextColor="#abaeb0"
-              />
-              <View style={styles.closeIconView}>
-                <TouchableOpacity
-                  style={styles.closeIcon}
-                  onPress={() => handleSearchClose()}>
-                  <Icon name="close" color="#fff" height="10" width="10" />
-                </TouchableOpacity>
-              </View>
-            </Animatable.View>
-          ) : (
-            <View
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                // marginRight: 10,
-              }}>
-              <IconBg
-                name="search"
-                height="15"
-                width="15"
-                backgroundColor="transparent"
-                onPress={() => handleSearchOpen()}
-                // color={searchIconColor ? searchIconColor : theme.colors.WHITE}
-                // onPress={() => handleSearchOpen()}
-                // backgroundColor={searchIconBg}
-              />
-            </View>
-          )}
+          <CustomText
+            text="Cart"
+            fontFamily={theme.fontFamily.bold}
+            fontSize="25"
+            color={theme.colors.TITLE}
+          />
         </View>
 
         <View style={styles.itemsView}>
           <CartProductsListing />
         </View>
 
-        <AddNewItem title="Add more items" />
+        <View style={{marginVertical: 8}}>
+          <AddNewItem title="Add more items" />
+        </View>
       </View>
       <View style={styles.checkoutCountainer}>
         <CustomText
@@ -174,39 +134,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // backgroundColor: 'blue',s
   },
-  inputView: {
-    height: 50,
-    width: '100%',
-    backgroundColor: '#f1f2f2',
-    borderRadius: 20,
-    flexDirection: 'row',
-    paddingHorizontal: 8,
-  },
-  searchInput: {
-    color: theme.colors.black,
-    flex: 6,
-    fontFamily: theme.fontFamily.regular,
-  },
-  searchIcon: {
-    flex: 0.8,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-  },
-  closeIconView: {
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-    flex: 1,
-  },
-  closeIcon: {
-    height: 20,
-    width: 20,
-    borderRadius: 50,
-    backgroundColor: '#393f45',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   itemsView: {
-    height: height - 350,
+    height: height - 375,
 
     // backgroundColor: 'red',
   },
@@ -220,7 +149,7 @@ const styles = StyleSheet.create({
   },
   totalPrice: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 5,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
