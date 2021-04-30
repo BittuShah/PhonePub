@@ -31,7 +31,7 @@ const CartScreen = () => {
         rightIcon="trash"
         rightIconColor="#fff"
         rightIconBg={theme.colors.PRIMARY_BLUE}
-        //   searchEnabled
+        searchEnabled
         // primaryTextColor={theme.colors.TITLE}
         // primaryText="Phone Pub"
       />
