@@ -13,6 +13,17 @@ const StyleContainer = styled.View`
     props.backgroundColor ? props.backgroundColor : theme.colors.GREY5};
   margin-bottom: 25px;
 `;
+
+const StyleSelectContainer = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 17px;
+  padding-horizontal: 15px;
+  align-items: center;
+  background-color: ${props =>
+    props.backgroundColor ? props.backgroundColor : theme.colors.GREY5};
+  margin-bottom: 25px;
+`;
 // padding-top: 5px
 // height: 55px;
 
@@ -34,4 +45,4 @@ const StyleInput = styled.TextInput`
 //   align-items: 'center';
 // `;
 
-export {StyleContainer, StyleInput};
+export {StyleContainer, StyleInput, StyleSelectContainer};

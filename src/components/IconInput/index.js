@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextInput} from 'react-native';
 // import theme from '../../theme';
-import {StyleContainer, StyleInput} from './style';
+import {StyleContainer, StyleInput, StyleSelectContainer} from './style';
 import Icon from './../Icon/index';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
@@ -14,26 +14,55 @@ export const IconInput = ({
   iconName,
   multiline = false,
   numberOfLines,
+  select,
+  onChangeText,
+  value,
 }) => {
   return (
-    <StyleContainer>
-      <Icon
-        name={iconName}
-        style={styles.inputIcon}
-        height="17"
-        width="17"
-        color="#393939"
-      />
-      <KeyboardAwareScrollView>
-        <StyleInput
-          placeholder={placeHolder}
-          keyboardType={keyboardType}
-          secureTextEntry={secureTextEntry}
-          multiline={multiline}
-          numberOfLines={numberOfLines}
-          placeholderTextColor="#abaeb0"></StyleInput>
-      </KeyboardAwareScrollView>
-    </StyleContainer>
+    <>
+      {!select ? (
+        <StyleContainer>
+          <Icon
+            name={iconName}
+            style={styles.inputIcon}
+            height="17"
+            width="17"
+            color="#393939"
+          />
+          <KeyboardAwareScrollView>
+            <StyleInput
+              placeholder={placeHolder}
+              keyboardType={keyboardType}
+              secureTextEntry={secureTextEntry}
+              multiline={multiline}
+              numberOfLines={numberOfLines}
+              placeholderTextColor="#abaeb0"
+              onChangeText={onChangeText}
+              value={value}
+            />
+          </KeyboardAwareScrollView>
+        </StyleContainer>
+      ) : (
+        <StyleSelectContainer onPress={onPress}>
+          <Icon
+            name={iconName}
+            style={styles.inputIcon}
+            height="17"
+            width="17"
+            color="#393939"
+          />
+
+          <KeyboardAwareScrollView>
+            <StyleInput
+              placeholder={placeHolder}
+              placeholderTextColor="#abaeb0"
+              editable={false}
+              value={value}
+            />
+          </KeyboardAwareScrollView>
+        </StyleSelectContainer>
+      )}
+    </>
   );
 };
 

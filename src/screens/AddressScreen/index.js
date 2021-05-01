@@ -1,12 +1,31 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import Modal from 'react-native-modal';
 import theme from '../../theme';
-import {Button, IconInput, Link, Header} from '../../components';
-const {height} = Dimensions.get('window');
+import {
+  Button,
+  IconInput,
+  Link,
+  Header,
+  BodyTitle,
+  SearchSelect,
+} from '../../components';
 import {states} from '../../lib/dummyData';
 
+const {height} = Dimensions.get('window');
+
 const AddressScreen = ({isEdit}) => {
+  const [stateModalOpen, setStateModalOpen] = useState(false);
+  const [selectedState, setSelectedState] = useState({});
+
+  useEffect(() => {
+    console.log(selectedState);
+  }, [selectedState]);
+
+  const onStateSelect = state => {
+    setSelectedState(state);
+  };
+
   return (
     <View
       style={{
@@ -21,8 +40,11 @@ const AddressScreen = ({isEdit}) => {
       />
 
       <View style={styles.whiteView}>
-        <ScrollView style={{paddingHorizontal: 20}}>
-          <Text style={styles.title}>Delivery Address</Text>
+        <ScrollView
+          style={{
+            paddingHorizontal: 20,
+          }}>
+          <BodyTitle title="Delivery Address" />
           <View style={styles.inputContainer}>
             <IconInput iconName="user-fill" placeHolder="Name" />
 
@@ -33,21 +55,34 @@ const AddressScreen = ({isEdit}) => {
               placeHolder="Address"
             />
 
-            <IconInput iconName="city" placeHolder="City" />
-
+            <IconInput
+              iconName="state"
+              placeHolder="State"
+              select
+              value={selectedState?.name}
+              onPress={() => setStateModalOpen(true)}
+            />
+            <IconInput iconName="city" placeHolder="City" select />
             <IconInput
               iconName="pincode"
               placeHolder="Pincode"
               keyboardType="numeric"
             />
-
-            <IconInput iconName="state" placeHolder="State" />
-
-            <IconInput iconName="world" placeHolder="Country"></IconInput>
+            {/* <IconInput iconName="world" placeHolder="Country"></IconInput> */}
           </View>
-          <Button title="Save Address" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Save Address"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </ScrollView>
       </View>
+      <SearchSelect
+        open={stateModalOpen}
+        close={setStateModalOpen}
+        data={states}
+        onSelect={onStateSelect}
+      />
     </View>
   );
 };
@@ -61,13 +96,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 40,
     // paddingHorizontal: 20,
-    height: height - 150,
+    height: height - 90,
     marginTop: 40,
-  },
-  title: {
-    fontSize: 28,
-    fontFamily: theme.fontFamily.bold,
-    color: theme.colors.TITLE,
   },
   subTitle: {
     color: theme.colors.SUB_TITLE,
