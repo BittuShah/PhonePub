@@ -117,6 +117,45 @@ export const deliveryAddress = [
   },
 ];
 
+export const savedCards = [
+  {
+    id: '1',
+    cardNum: '2948',
+    cardExpiry: '12/23',
+    cardType: 'Visa',
+  },
+  {
+    id: '2',
+    cardNum: '8956',
+    cardExpiry: '09/23',
+    cardType: 'Master',
+  },
+  {
+    id: '3',
+    cardNum: '9623',
+    cardExpiry: '02/26',
+    cardType: 'Maestro',
+  },
+  {
+    id: '4',
+    cardNum: '1648',
+    cardExpiry: '12/23',
+    cardType: 'Rupay',
+  },
+  {
+    id: '5',
+    cardNum: '6912',
+    cardExpiry: '11/25',
+    cardType: 'Rupay',
+  },
+  {
+    id: '6',
+    cardNum: '5668',
+    cardExpiry: '10/24',
+    cardType: 'Visa',
+  },
+];
+
 export const states = [
   {id: 1, name: 'Andhra Pradesh'},
   {id: 2, name: 'Arunachal Pradesh'},

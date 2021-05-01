@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import * as Animatable from 'react-native-animatable';
-import {truncate} from '../../lib/helper';
 import {
   View,
   ScrollView,
@@ -19,6 +18,7 @@ import {
   Quantity,
   Button,
 } from '../../components';
+import {truncate} from '../../lib/helper';
 import theme from '../../theme';
 const {height, width} = Dimensions.get('window');
 const strLength = 16;

@@ -10,7 +10,6 @@ export const StyleButton = styled.TouchableOpacity`
   border-radius: 50px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : theme.colors.PRIMARY_BLUE};
-  color: ${props => (props.color ? props.color : theme.colors.WHITE)};
   elevation: 2;
 `;
 // margin-top: 60px;

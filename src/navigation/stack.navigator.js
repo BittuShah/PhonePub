@@ -17,7 +17,7 @@ import {
   LogoScreen,
   HomeScreen,
   ProductDetailScreen,
-  OrderNowScreen,
+  OrderScreen,
   BuyNowScreen,
   TestingNisargComponents,
   TestingPratikComponents,
@@ -26,6 +26,7 @@ import {
   DeliveryAddressScreen,
   AddressScreen,
   TestingParshvComponents,
+  PaymentScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -101,6 +102,18 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
       {/* <Stack.Screen
+        name={AppRoute.PAYMENT_SCREEN}
+        component={PaymentScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+      {/* <Stack.Screen
+        name={AppRoute.ORDER_SCREEN}
+        component={OrderScreen}
+        options={{headerShown: false}}
+      /> */}
+      {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}
         options={{
@@ -114,11 +127,6 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> 
-      <Stack.Screen
-        name={AppRoute.ORDER_NOW_SCREEN}
-        component={OrderNowScreen}
-        options={{headerShown: false}}
-      />
       <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}
         component={BuyNowScreen}

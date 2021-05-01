@@ -16,6 +16,7 @@ import BodyTitle from './BodyTitle';
 import AddNewItem from './AddNewItem';
 import Quantity from './Quantity';
 import CartItem from './CartItem';
+import SearchSelect from './SearchSelect';
 
 export {
   CustomText,
@@ -34,4 +35,5 @@ export {
   AddNewItem,
   Quantity,
   CartItem,
+  SearchSelect,
 };
