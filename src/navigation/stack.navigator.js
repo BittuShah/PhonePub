@@ -79,13 +79,13 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
 
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.ADDRESS_SCREEN}
         component={AddressScreen}
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
       {/* <Stack.Screen
         name={AppRoute.PRODUCT_DETAIL_SCREEN}
         component={ProductDetailScreen}
@@ -93,13 +93,13 @@ export const PhonePubStackScreen = ({navigation}) => {
           header: props => null,
         }}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.CART_SCREEN}
         component={CartScreen}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}

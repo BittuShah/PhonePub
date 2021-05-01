@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import Modal from 'react-native-modal';
 import theme from '../../theme';
 import {Button, IconInput, Link, Header} from '../../components';
 const {height} = Dimensions.get('window');
+import {states} from '../../lib/dummyData';
 
 const AddressScreen = ({isEdit}) => {
   return (
@@ -21,34 +23,31 @@ const AddressScreen = ({isEdit}) => {
       <View style={styles.whiteView}>
         <ScrollView style={{paddingHorizontal: 20}}>
           <Text style={styles.title}>Delivery Address</Text>
-          {/* <Text style={styles.subTitle}>Fill your account details</Text> */}
           <View style={styles.inputContainer}>
-            {/* <IconInput iconName="id-card-fill" placeHolder="Name" /> */}
-
             <IconInput iconName="user-fill" placeHolder="Name" />
 
             <IconInput
-              iconName="user-fill"
+              iconName="home"
               multiline={true}
               numberOfLines={4}
               placeHolder="Address"
             />
-            <IconInput iconName="email-fill" placeHolder="City" />
 
-            <IconInput iconName="password-key" placeHolder="State" />
+            <IconInput iconName="city" placeHolder="City" />
 
-            <IconInput iconName="password-key" placeHolder="Pincode" />
+            <IconInput
+              iconName="pincode"
+              placeHolder="Pincode"
+              keyboardType="numeric"
+            />
 
-            {/* <IconInput iconName="call" placeHolder="Phone"></IconInput> */}
+            <IconInput iconName="state" placeHolder="State" />
+
+            <IconInput iconName="world" placeHolder="Country"></IconInput>
           </View>
           <Button title="Save Address" fontFamily={theme.fontFamily.bold} />
-          {/* <View style={styles.bottomTextView}>
-            <Text style={styles.bottomText}>Already have an account?</Text>
-            <Link text="Sign In" />
-          </View> */}
         </ScrollView>
       </View>
-      {/* </View> */}
     </View>
   );
 };
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 40,
     // paddingHorizontal: 20,
-    height: height - 100,
+    height: height - 150,
     marginTop: 40,
   },
   title: {
