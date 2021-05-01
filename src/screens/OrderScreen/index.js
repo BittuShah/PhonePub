@@ -57,10 +57,10 @@ const OrderScreen = ({route, navigation}) => {
                 text={
                   'Nani bhativad Nani bhativad Nani bhativad'.length > strLength
                     ? truncate(
-                        'Nani bhatiyad Nani bhativad Nani bhativad',
+                        'Nani bhativad Nani bhativad Nani bhativad',
                         strLength,
                       )
-                    : 'Nani bhatiyad Nani bhativad Nani bhativad'
+                    : 'Nani bhativad Nani bhativad Nani bhativad'
                 }
                 fontSize={theme.fontSize.NORMAL}
               />

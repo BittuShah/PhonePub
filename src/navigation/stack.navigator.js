@@ -26,6 +26,7 @@ import {
   DeliveryAddressScreen,
   AddressScreen,
   TestingParshvComponents,
+  PaymentScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -101,10 +102,17 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
       <Stack.Screen
+        name={AppRoute.PAYMENT_SCREEN}
+        component={PaymentScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      {/* <Stack.Screen
         name={AppRoute.ORDER_SCREEN}
         component={OrderScreen}
         options={{headerShown: false}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}

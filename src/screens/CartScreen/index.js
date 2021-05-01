@@ -110,7 +110,7 @@ const CartScreen = ({route, navigation}) => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f8f8f8',
+    backgroundColor: theme.colors.SCREEN_WHITE,
   },
   main: {
     paddingHorizontal: 15,
@@ -124,14 +124,11 @@ const styles = StyleSheet.create({
   cartTitleView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // borderWidth: 1,
     height: 50,
-    // marginBottom: 5,
     alignItems: 'center',
-    // backgroundColor: 'blue',s
   },
   itemsView: {
-    height: height - 375,
+    height: height - 365,
 
     // backgroundColor: 'red',
   },

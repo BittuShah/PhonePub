@@ -28,6 +28,7 @@ import ContactScreen from './ContactScreen';
 import RateScreen from './RateScreen';
 import DeliveryAddressScreen from './DeliveryAddressScreen';
 import AddressScreen from './AddressScreen';
+import PaymentScreen from './PaymentScreen';
 
 export {
   CustomDrawer,
@@ -53,4 +54,5 @@ export {
   CartScreen,
   DeliveryAddressScreen,
   AddressScreen,
+  PaymentScreen,
 };
