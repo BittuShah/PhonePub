@@ -25,6 +25,7 @@
     "react-native-keyboard-aware-scroll-view": "^0.9.3",
     "react-native-modal": "^11.10.0",
     "react-native-otp-inputs": "^7.0.3",
+    "react-native-ratings": "^8.0.4",
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.1.1",
