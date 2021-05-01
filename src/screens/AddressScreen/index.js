@@ -17,13 +17,14 @@ const {height} = Dimensions.get('window');
 const AddressScreen = ({isEdit}) => {
   const [stateModalOpen, setStateModalOpen] = useState(false);
   const [selectedState, setSelectedState] = useState({});
-
-  useEffect(() => {
-    console.log(selectedState);
-  }, [selectedState]);
+  const [cityModalOpen, setCityModalOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState({});
 
   const onStateSelect = state => {
     setSelectedState(state);
+  };
+  const onCitySelect = city => {
+    setSelectedCity(city);
   };
 
   return (
@@ -62,7 +63,12 @@ const AddressScreen = ({isEdit}) => {
               value={selectedState?.name}
               onPress={() => setStateModalOpen(true)}
             />
-            <IconInput iconName="city" placeHolder="City" select />
+            <IconInput
+              iconName="city"
+              placeHolder="City"
+              select
+              onPress={() => setCityModalOpen(true)}
+            />
             <IconInput
               iconName="pincode"
               placeHolder="Pincode"
@@ -81,7 +87,17 @@ const AddressScreen = ({isEdit}) => {
         open={stateModalOpen}
         close={setStateModalOpen}
         data={states}
+        headerText="Select state"
         onSelect={onStateSelect}
+        selectedValue={selectedState}
+      />
+      <SearchSelect
+        open={cityModalOpen}
+        close={setCityModalOpen}
+        data={states}
+        headerText="Select city"
+        onSelect={onCitySelect}
+        selectedValue={selectedCity}
       />
     </View>
   );

@@ -10,18 +10,20 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import Modal from 'react-native-modal';
-import {IconInput} from '..';
+import {CustomText, IconInput} from '..';
 
 import theme from '../../theme';
 
 const SearchSelect = props => {
   const [data, setData] = useState(props.data);
-  const [searchText, setSearchText] = useState('');
 
   const renderHeader = () => {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerText}>Select State</Text>
+        <CustomText
+          text={props.headerText}
+          fontFamily={theme.fontFamily.bold}
+        />
       </View>
     );
   };
@@ -33,13 +35,13 @@ const SearchSelect = props => {
           placeHolder="Search here..."
           iconName="search"
           onChangeText={handleSearch}
+          marginBottom="5"
         />
       </View>
     );
   };
 
   const handleSearch = text => {
-    setSearchText(text);
     let tempData = props.data.filter(
       item => item.name.toLowerCase().indexOf(text.toLowerCase()) !== -1,
     );
@@ -64,20 +66,26 @@ const SearchSelect = props => {
         {renderSearch()}
         <ScrollView keyboardShouldPersistTaps="always">
           {data.map(_ => {
-            // let isSelected = selectedSkill.includes(_.name);
-            // let textStyle = {
-            //   color: Theme.color.PRIMARY_COLOR,
-            // };
+            let isSelected = props?.selectedValue?.id === _.id;
             return (
               <TouchableOpacity
                 key={_.id}
                 activeOpacity={1}
                 onPress={() => onSelect(_)}
                 style={styles.dataRow}>
-                <Text style={[styles.dataText]}>{_.name}</Text>
-                {/* {isSelected && (
-                      <Image source={require("../../assets.select.png")} style={styles.selectImageIcon} />
-                    )} */}
+                <CustomText
+                  text={_.name}
+                  style={styles.dataText}
+                  color={
+                    isSelected ? theme.colors.PRIMARY_BLUE : theme.colors.black
+                  }
+                />
+                {isSelected && (
+                  <Image
+                    source={require('../../assets/select.png')}
+                    style={styles.selectImageIcon}
+                  />
+                )}
               </TouchableOpacity>
             );
           })}
@@ -105,12 +113,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     borderBottomColor: 'rgba(0,0,0,0.2)',
   },
-  headerText: {
-    fontSize: 14,
-  },
+
   mainBody: {
     justifyContent: 'center',
-    height: 250,
+    height: 270,
     backgroundColor: theme.colors.WHITE,
   },
   dataRow: {
@@ -120,8 +126,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  dataText: {fontSize: 14, color: theme.colors.BLACK, flex: 1},
-
+  dataText: {flex: 1},
   selectImageIcon: {
     height: 10,
     width: 10,

@@ -17,11 +17,12 @@ export const IconInput = ({
   select,
   onChangeText,
   value,
+  marginBottom,
 }) => {
   return (
     <>
       {!select ? (
-        <StyleContainer>
+        <StyleContainer marginBottom={marginBottom}>
           <Icon
             name={iconName}
             style={styles.inputIcon}
@@ -43,7 +44,7 @@ export const IconInput = ({
           </KeyboardAwareScrollView>
         </StyleContainer>
       ) : (
-        <StyleSelectContainer onPress={onPress}>
+        <StyleSelectContainer onPress={onPress} marginBottom={marginBottom}>
           <Icon
             name={iconName}
             style={styles.inputIcon}

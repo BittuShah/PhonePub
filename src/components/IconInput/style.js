@@ -11,7 +11,7 @@ const StyleContainer = styled.View`
   align-items: center;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : theme.colors.GREY5};
-  margin-bottom: 25px;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : 25)}px;
 `;
 
 const StyleSelectContainer = styled.TouchableOpacity`
