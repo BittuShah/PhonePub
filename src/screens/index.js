@@ -19,7 +19,7 @@ import LogoScreen from './LogoScreen';
 import HomeScreen from './HomeScreen';
 import ProductDetailScreen from './ProductDetailScreen';
 import CartScreen from './CartScreen';
-import OrderNowScreen from './OrderNowScreen';
+import OrderScreen from './OrderScreen';
 import BuyNowScreen from './BuyNowScreen';
 import MyOrderScreen from './MyOrderScreen';
 import EditProfileScreen from './EditProfileScreen';
@@ -42,7 +42,7 @@ export {
   ResetPasswordScreen,
   HomeScreen,
   ProductDetailScreen,
-  OrderNowScreen,
+  OrderScreen,
   BuyNowScreen,
   MyOrderScreen,
   EditProfileScreen,

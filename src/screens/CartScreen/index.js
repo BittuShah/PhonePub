@@ -21,6 +21,7 @@ import {
   CartItem,
   CartProductsListing,
   AddNewItem,
+  BodyTitle,
 } from '../../components';
 import theme from '../../theme';
 const {height} = Dimensions.get('window');
@@ -52,12 +53,7 @@ const CartScreen = ({route, navigation}) => {
       />
       <View style={styles.main}>
         <View style={styles.cartTitleView}>
-          <CustomText
-            text="Cart"
-            fontFamily={theme.fontFamily.bold}
-            fontSize="25"
-            color={theme.colors.TITLE}
-          />
+          <BodyTitle title="Cart" />
         </View>
 
         <View style={styles.itemsView}>

@@ -17,7 +17,7 @@ import {
   LogoScreen,
   HomeScreen,
   ProductDetailScreen,
-  OrderNowScreen,
+  OrderScreen,
   BuyNowScreen,
   TestingNisargComponents,
   TestingPratikComponents,
@@ -93,12 +93,17 @@ export const PhonePubStackScreen = ({navigation}) => {
           header: props => null,
         }}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.CART_SCREEN}
         component={CartScreen}
         options={{
           headerShown: false,
         }}
+      /> */}
+      <Stack.Screen
+        name={AppRoute.ORDER_SCREEN}
+        component={OrderScreen}
+        options={{headerShown: false}}
       />
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
@@ -114,11 +119,6 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> 
-      <Stack.Screen
-        name={AppRoute.ORDER_NOW_SCREEN}
-        component={OrderNowScreen}
-        options={{headerShown: false}}
-      />
       <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}
         component={BuyNowScreen}
