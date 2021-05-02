@@ -107,6 +107,15 @@ export default MainContainer = () => {
             ),
           }}
         />
+        <Drawer.Screen
+          name="Feedback"
+          component={RateScreen}
+          options={{
+            drawerIcon: ({color, size}) => (
+              <Icon name="comment-fill" color="#fff" />
+            ),
+          }}
+        />
       </Drawer.Navigator>
     );
   }
