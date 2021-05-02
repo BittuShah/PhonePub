@@ -27,6 +27,8 @@ import {
   AddressScreen,
   TestingParshvComponents,
   PaymentScreen,
+  RatingScreen,
+  FeedbackScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -80,13 +82,30 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.ADDRESS_SCREEN}
         component={AddressScreen}
         options={{
           headerShown: false,
         }}
+      /> */}
+
+      <Stack.Screen
+        name={AppRoute.FEEDBACK_SCREEN}
+        component={FeedbackScreen}
+        options={{
+          headerShown: false,
+        }}
       />
+
+      {/* <Stack.Screen
+        name={AppRoute.RATING_SCREEN}
+        component={RatingScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+
       {/* <Stack.Screen
         name={AppRoute.PRODUCT_DETAIL_SCREEN}
         component={ProductDetailScreen}

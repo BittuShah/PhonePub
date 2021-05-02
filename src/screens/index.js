@@ -25,10 +25,12 @@ import MyOrderScreen from './MyOrderScreen';
 import EditProfileScreen from './EditProfileScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
-import RateScreen from './RateScreen';
 import DeliveryAddressScreen from './DeliveryAddressScreen';
 import AddressScreen from './AddressScreen';
 import PaymentScreen from './PaymentScreen';
+import RatingScreen from './RatingScreen';
+// import FeedbackScreen from './RateScreen/index';
+import FeedbackScreen from './FeedbackScreen';
 
 export {
   CustomDrawer,
@@ -49,10 +51,11 @@ export {
   EditProfileScreen,
   AboutScreen,
   ContactScreen,
-  RateScreen,
+  FeedbackScreen,
   OtpScreen,
   CartScreen,
   DeliveryAddressScreen,
   AddressScreen,
   PaymentScreen,
+  RatingScreen,
 };

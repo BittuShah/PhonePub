@@ -14,7 +14,8 @@ import {
   EditProfileScreen,
   AboutScreen,
   ContactScreen,
-  RateScreen,
+  // RateScreen,
+  RatingScreen,
   CustomDrawer,
 } from '../screens';
 
@@ -86,7 +87,7 @@ export default MainContainer = () => {
         />
         <Drawer.Screen
           name="Rate"
-          component={RateScreen}
+          component={RatingScreen}
           options={{
             drawerIcon: ({color, size}) => <Icon name="user" />,
           }}
