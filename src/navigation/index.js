@@ -14,7 +14,8 @@ import {
   EditProfileScreen,
   AboutScreen,
   ContactScreen,
-  RateScreen,
+  // RateScreen,
+  RatingScreen,
   CustomDrawer,
 } from '../screens';
 
