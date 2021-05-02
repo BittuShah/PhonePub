@@ -29,7 +29,7 @@ const HomeScreen = ({route, navigation}) => {
       <Header
         leftIcon="menu"
         onLeftPress={() => navigation.openDrawer()}
-        headerBackground={theme.colors.SCREEN_WHITE}
+        headerBackground="#fff"
         rightIcon="cart"
         rightIconColor="#fff"
         rightIconBg={theme.colors.PRIMARY_BLUE}

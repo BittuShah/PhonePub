@@ -42,37 +42,51 @@ export default MainContainer = () => {
     return <Loader />;
   } else {
     return (
-      <Drawer.Navigator
-        drawerStyle={{
-          backgroundColor: '#fff',
-        }}
-        drawerContent={props => <CustomDrawer {...props} />}>
+      <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}>
         <Drawer.Screen
           name="Home"
           children={AppNavigator}
           options={{
-            drawerIcon: ({color, size}) => <Icon name="user" />,
+            drawerIcon: ({color, size}) => <Icon name="house" color="#fff" />,
             header: props => (
               <Header leftIcon="left-arrow" navigation={navigation} />
             ),
           }}
         />
         <Drawer.Screen
-          name="My Order"
+          name="My Profile"
+          component={EditProfileScreen}
+          options={{
+            drawerIcon: ({color, size}) => (
+              <Icon name="user-fill" color="#fff" />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="My Orders"
           component={MyOrderScreen}
           options={{
-            drawerIcon: ({color, size}) => <Icon name="user" />,
+            drawerIcon: ({color, size}) => (
+              <Icon name="list-fill" color="#fff" />
+            ),
             header: props => (
               <Header leftIcon="left-arrow" navigation={navigation} />
             ),
           }}
         />
         <Drawer.Screen
-          name="Edit Profile"
-          component={EditProfileScreen}
-          options={{drawerIcon: ({color, size}) => <Icon name="user" />}}
+          name="My Wish List"
+          component={MyOrderScreen}
+          options={{
+            drawerIcon: ({color, size}) => (
+              <Icon name="wish-list-fill" color="#fff" />
+            ),
+            header: props => (
+              <Header leftIcon="left-arrow" navigation={navigation} />
+            ),
+          }}
         />
-        <Drawer.Screen
+        {/* <Drawer.Screen
           name="About"
           component={AboutScreen}
           options={{drawerIcon: ({color, size}) => <Icon name="user" />}}
@@ -83,12 +97,14 @@ export default MainContainer = () => {
           options={{
             drawerIcon: ({color, size}) => <Icon name="user" />,
           }}
-        />
+        /> */}
         <Drawer.Screen
-          name="Rate"
+          name="Rate Us"
           component={RateScreen}
           options={{
-            drawerIcon: ({color, size}) => <Icon name="user" />,
+            drawerIcon: ({color, size}) => (
+              <Icon name="rate-fill" color="#fff" />
+            ),
           }}
         />
       </Drawer.Navigator>

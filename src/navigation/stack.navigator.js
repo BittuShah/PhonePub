@@ -80,13 +80,13 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.ADDRESS_SCREEN}
         component={AddressScreen}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.PRODUCT_DETAIL_SCREEN}
         component={ProductDetailScreen}
@@ -120,13 +120,14 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> */}
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      /> 
+      />
+      {/*
       <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}
         component={BuyNowScreen}
