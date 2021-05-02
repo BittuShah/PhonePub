@@ -15,7 +15,7 @@ export default theme = {
     WHITE: '#ffffff',
     PLACE_HOLDER_TEXT_COLOR: '#c9c9c9',
     GREY: 'grey',
-    GREY2: '#94989b',
+    GREY2: '#aaa',
     GREY3: '#ccc',
     GREY4: '#e9e9e9',
     GREY5: '#f8f8f8',
@@ -26,8 +26,6 @@ export default theme = {
     // black: '#000', // #1A1A1A
     RED: '#ff3b30',
     RED_LIGHT: '#FF7F7F',
-    YELLOW: '#FFFF33',
-    YELLOW_LIGHT: '#FFFF99',
     BACKGROUND_COLOR: '#EEEFF1',
     BLUE: '#0079B8',
     PRIMARY_BLUE: '#39abee',

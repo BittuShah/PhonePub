@@ -16,27 +16,31 @@ const Deliveries = () => {
     switch (status) {
       case 'success':
         return {
-          iconName: 'user-fill',
+          iconName: 'check',
           background: theme.colors.GREEN_LIGHT,
           color: theme.colors.GREEN,
+          orderText: 'Delivered',
         };
       case 'pending':
         return {
-          iconName: 'user-fill',
-          background: theme.colors.YELLOW_LIGHT,
-          color: theme.colors.YELLOW,
+          iconName: 'clock',
+          background: '#F7CB73',
+          color: '#c5a25c',
+          orderText: 'Placed',
         };
       case 'cancel':
         return {
-          iconName: 'user-fill',
+          iconName: 'close',
           background: theme.colors.RED_LIGHT,
           color: theme.colors.RED,
+          orderText: 'Canceled',
         };
       default:
         return {
-          iconName: 'user-fill',
-          background: theme.colors.GREEN_LIGHT,
-          color: theme.colors.GREEN,
+          iconName: 'clock',
+          background: '#F7CB73',
+          color: '#c5a25c',
+          orderText: 'Placed',
         };
     }
   };
@@ -48,16 +52,21 @@ const Deliveries = () => {
         <View style={styles.iconTimeView}>
           <View
             style={[styles.iconView, {backgroundColor: statusObj.background}]}>
-            <Icon name={statusObj.iconName} color={statusObj.color} />
+            <Icon
+              name={statusObj.iconName}
+              color={statusObj.color}
+              height="20"
+              width="20"
+            />
           </View>
           <View style={styles.textView}>
             <CustomText
-              text="Placed on "
+              text={`${statusObj.orderText} on `}
               color={theme.colors.GREY2}
               fontSize={15}
             />
             <CustomText
-              text={moment(delivery.data).format('MMM DD, YYYY HH:MM A')}
+              text={moment(delivery.data).format('MMM DD, YYYY hh:mm A')}
               fontFamily={theme.fontFamily.bold}
               fontSize={15}
             />
