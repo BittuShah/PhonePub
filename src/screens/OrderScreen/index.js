@@ -110,7 +110,11 @@ const OrderScreen = ({route, navigation}) => {
             />
           </View>
         </View>
-        <Button title="Checkout" fontFamily={theme.fontFamily.bold} />
+        <Button
+          title="Checkout"
+          fontFamily={theme.fontFamily.bold}
+          color="#fff"
+        />
       </View>
     </View>
   );

@@ -73,6 +73,7 @@ const AddressScreen = ({isEdit}) => {
               iconName="pincode"
               placeHolder="Pincode"
               keyboardType="numeric"
+              maskValue="[000000]"
             />
             {/* <IconInput iconName="world" placeHolder="Country"></IconInput> */}
           </View>

@@ -111,6 +111,7 @@ const DeliveryAddressScreen = () => {
             title="Continue"
             fontFamily={theme.fontFamily.bold}
             containerStyle={styles.button}
+            color="#fff"
           />
         </StyleBottomView>
       </StyleContentContainer>

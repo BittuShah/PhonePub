@@ -53,7 +53,7 @@ const CartScreen = ({route, navigation}) => {
       />
       <View style={styles.main}>
         <View style={styles.cartTitleView}>
-          <BodyTitle title="Cart" />
+          <BodyTitle title="My Cart" />
         </View>
 
         <View style={styles.itemsView}>
@@ -94,7 +94,11 @@ const CartScreen = ({route, navigation}) => {
             />
           </View>
         </View>
-        <Button title="Checkout" fontFamily={theme.fontFamily.bold} />
+        <Button
+          title="Checkout"
+          fontFamily={theme.fontFamily.bold}
+          color="#fff"
+        />
       </View>
       {/* <Text
         style={{

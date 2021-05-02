@@ -101,7 +101,7 @@ export default MainContainer = () => {
         /> */}
         <Drawer.Screen
           name="Rate Us"
-          component={RateScreen}
+          component={MyOrderScreen}
           options={{
             drawerIcon: ({color, size}) => (
               <Icon name="rate-fill" color="#fff" />
@@ -110,7 +110,7 @@ export default MainContainer = () => {
         />
         <Drawer.Screen
           name="Feedback"
-          component={RateScreen}
+          component={MyOrderScreen}
           options={{
             drawerIcon: ({color, size}) => (
               <Icon name="comment-fill" color="#fff" />

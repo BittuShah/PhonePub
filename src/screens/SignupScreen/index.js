@@ -1,7 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Link, Header} from '../../components';
+import {
+  Button,
+  IconInput,
+  Link,
+  Header,
+  BodyTitle,
+  CustomText,
+} from '../../components';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 const {height} = Dimensions.get('window');
 
@@ -21,27 +28,42 @@ const SignupScreen = () => {
       <View style={styles.whiteView}>
         <KeyboardAwareScrollView>
           <ScrollView style={{paddingHorizontal: 20}}>
-            <Text style={styles.title}>Registration</Text>
-            <Text style={styles.subTitle}>Fill your account details</Text>
+            {/* <Text style={styles.title}>Registration</Text> */}
+            <BodyTitle title="Registration" />
+            <CustomText
+              style={styles.subTitle}
+              text="Fill your account details"
+            />
+            {/* <Text style={styles.subTitle}>Fill your account details</Text> */}
             <View style={styles.inputContainer}>
               {/* <IconInput iconName="id-card-fill" placeHolder="Name" /> */}
 
-              <IconInput iconName="user-fill" placeHolder="Name"></IconInput>
+              <IconInput iconName="user-fill" placeHolder="Name*" />
               <IconInput
                 iconName="email-fill"
-                placeHolder="Email"
-                keyboardType="email-address"></IconInput>
+                placeHolder="Email*"
+                keyboardType="email-address"
+              />
 
               <IconInput
                 iconName="password-key"
-                placeHolder="Password"
+                placeHolder="Password*"
                 secureTextEntry
                 // keyboardType="visible-password"
-              ></IconInput>
+              />
 
-              {/* <IconInput iconName="call" placeHolder="Phone"></IconInput> */}
+              <IconInput
+                iconName="call"
+                placeHolder="Phone"
+                maskValue="+91 [0000000000]"
+                keyboardType="number-pad"
+              />
             </View>
-            <Button title="Register" isBold={true} />
+            <Button
+              title="Register"
+              fontFamily={theme.fontFamily.bold}
+              color="#fff"
+            />
             <View style={styles.bottomTextView}>
               <Text style={styles.bottomText}>Already have an account?</Text>
               <Link text="Sign In" />

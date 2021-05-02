@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Header} from '../../components';
+import {
+  Button,
+  IconInput,
+  Header,
+  BodyTitle,
+  CustomText,
+} from '../../components';
 const {height} = Dimensions.get('window');
 
 const ForgotPasswordScreen = () => {
@@ -20,18 +26,29 @@ const ForgotPasswordScreen = () => {
       />
       <View style={styles.whiteView}>
         <ScrollView style={{paddingHorizontal: 20}}>
-          <Text style={styles.title}>Forgot Password?</Text>
-          <Text style={styles.subTitle}>
+          {/* <Text style={styles.title}>Forgot Password?</Text> */}
+          <BodyTitle title="Forgot Password?" />
+          {/* <Text style={styles.subTitle}>
             Enter your phone number and get the OTP to reset your password
-          </Text>
+          </Text> */}
+          <CustomText
+            text="Enter your phone number and get the OTP to reset your password"
+            style={styles.subTitle}
+          />
 
           <View style={styles.inputContainer}>
             <IconInput
               iconName="call"
-              placeHolder="Phone"
-              keyboardType="numeric"></IconInput>
+              placeHolder="Phone*"
+              keyboardType="numeric"
+              maskValue="+91 [0000000000]"
+            />
           </View>
-          <Button title="Send OTP" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Send OTP"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </ScrollView>
       </View>
     </View>

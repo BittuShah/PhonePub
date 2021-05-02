@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Header} from '../../components';
+import {
+  Button,
+  IconInput,
+  Header,
+  BodyTitle,
+  CustomText,
+} from '../../components';
 const {height} = Dimensions.get('window');
 
 const RegisterPhoneScreen = () => {
@@ -19,13 +25,24 @@ const RegisterPhoneScreen = () => {
       />
       <View style={styles.whiteView}>
         <ScrollView style={{paddingHorizontal: 20}}>
-          <Text style={styles.title}>Register phone</Text>
-          <Text style={styles.subTitle}>Enter your mobile number</Text>
+          {/* <Text style={styles.title}>Register phone</Text> */}
+          <BodyTitle title="Register phone" />
+          {/* <Text style={styles.subTitle}>Enter your mobile number</Text> */}
+          <CustomText text="Enter your mobile number" style={styles.subTitle} />
 
           <View style={styles.inputContainer}>
-            <IconInput iconName="call" placeHolder="Phone" />
+            <IconInput
+              iconName="call"
+              placeHolder="Phone*"
+              maskValue="+91 [0000000000]"
+              keyboardType="number-pad"
+            />
           </View>
-          <Button title="Continue" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Continue"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </ScrollView>
       </View>
     </View>
@@ -40,7 +57,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    paddingHorizontal: 20,
     height: height - 130,
     marginTop: 40,
   },

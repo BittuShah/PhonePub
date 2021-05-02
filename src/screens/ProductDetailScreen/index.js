@@ -182,6 +182,7 @@ const ProductDetailScreen = () => {
                 <Button
                   title="Add to cart"
                   fontFamily={theme.fontFamily.bold}
+                  color="#fff"
                 />
               </View>
               <View style={styles.wishlistCountContainer}>

@@ -8,7 +8,14 @@ import {
   Dimensions,
 } from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Link, Header} from '../../components';
+import {
+  Button,
+  IconInput,
+  Link,
+  Header,
+  BodyTitle,
+  CustomText,
+} from '../../components';
 const {height} = Dimensions.get('window');
 
 const LoginScreen = () => {
@@ -29,20 +36,29 @@ const LoginScreen = () => {
           style={{
             paddingHorizontal: 20,
           }}>
-          <Text style={styles.title}>Welcome back</Text>
-          <Text style={styles.subTitle}>Enter your credential login</Text>
+          {/* <Text style={styles.title}>Welcome back</Text> */}
+          <BodyTitle title="Welcome back" />
+          <CustomText
+            text="Enter your login credentials"
+            style={styles.subTitle}
+          />
+          {/* <Text style={styles.subTitle}>Enter your login credentials</Text> */}
 
           <View style={styles.inputContainer}>
             <IconInput
               iconName="user-fill"
-              placeHolder="Phone or Email"></IconInput>
+              placeHolder="Phone or Email*"></IconInput>
 
             <IconInput
               iconName="padlock"
-              placeHolder="Password"
+              placeHolder="Password*"
               secureTextEntry></IconInput>
           </View>
-          <Button title="Sign in" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Sign in"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
           <View style={styles.link}>
             <Link text="Forgot your password?" />
           </View>
@@ -67,7 +83,6 @@ const LoginScreen = () => {
               style={{flex: 1, height: 1, backgroundColor: theme.colors.GOLDEN}}
             />
           </View>
-
           <TouchableOpacity style={styles.borderButton}>
             <Text style={{color: '#7d7e80', fontFamily: theme.fontFamily.bold}}>
               Create an account

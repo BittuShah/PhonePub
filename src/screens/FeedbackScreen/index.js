@@ -18,6 +18,7 @@ import {
   Header,
   CustomText,
   Icon,
+  BodyTitle,
 } from '../../components';
 const {height} = Dimensions.get('window');
 
@@ -121,8 +122,13 @@ const FeedbackScreen = () => {
             paddingHorizontal: 20,
           }}>
           <View>
-            <Text style={styles.title}>Give us feedback</Text>
-            <Text style={styles.subTitle}>Write your suggestion here</Text>
+            {/* <Text style={styles.title}>Give us feedback</Text> */}
+            <BodyTitle title="Give us feedback" />
+            <CustomText
+              text="Write your suggestion here"
+              style={styles.subTitle}
+            />
+            {/* <Text style={styles.subTitle}>Write your suggestion here</Text> */}
           </View>
 
           {/* <View style={styles.imageContainer}>
@@ -141,9 +147,10 @@ const FeedbackScreen = () => {
           /> */}
 
           <TextInput
-            placeholder="Ex. Feedback"
+            placeholder="Message"
             multiline
-            numberOfLines={5}
+            numberOfLines={10}
+            placeholderTextColor="#abaeb0"
             style={styles.textarea}
           />
 
@@ -252,6 +259,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginTop: 15,
     marginBottom: 20,
+    color: theme.colors.black,
   },
   subTitle: {
     color: theme.colors.SUB_TITLE,

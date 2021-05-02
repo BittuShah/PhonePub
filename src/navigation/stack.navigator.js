@@ -44,6 +44,14 @@ export const PhonePubStackScreen = ({navigation}) => {
         options={{header: props => null}}
       /> */}
       {/* <Stack.Screen
+        name={AppRoute.NISARG_TEST}
+        component={TestingNisargComponents}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+
+      {/* <Stack.Screen
         name={AppRoute.REGISTER_PHONE_SCREEN}
         component={RegisterPhoneScreen}
         options={{header: props => null}}
@@ -69,13 +77,6 @@ export const PhonePubStackScreen = ({navigation}) => {
         options={{header: props => null}}
       /> */}
       {/* <Stack.Screen
-        name={AppRoute.NISARG_TEST}
-        component={TestingNisargComponents}
-        options={{
-          headerShown: false,
-        }}
-      /> */}
-      {/* <Stack.Screen
         name={AppRoute.DELIVERY_ADDRESS_SCREEN}
         component={DeliveryAddressScreen}
         options={{
@@ -91,13 +92,13 @@ export const PhonePubStackScreen = ({navigation}) => {
         }}
       /> */}
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.FEEDBACK_SCREEN}
         component={FeedbackScreen}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
 
       {/* <Stack.Screen
         name={AppRoute.RATING_SCREEN}
@@ -145,13 +146,13 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> */}
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
       {/*
       <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}

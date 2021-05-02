@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
-import {Button, IconInput, Header} from '../../components';
+import {
+  Button,
+  IconInput,
+  Header,
+  BodyTitle,
+  CustomText,
+} from '../../components';
 const {height} = Dimensions.get('window');
 
 const ResetPasswordScreen = () => {
@@ -20,20 +26,26 @@ const ResetPasswordScreen = () => {
       />
       <View style={styles.whiteView}>
         <ScrollView style={{paddingHorizontal: 20}}>
-          <Text style={styles.title}>Reset Password</Text>
-          <Text style={styles.subTitle}>Enter new password</Text>
+          {/* <Text style={styles.title}>Reset Password</Text> */}
+          <BodyTitle title="Reset password" />
+          {/* <Text style={styles.subTitle}>Enter new password</Text> */}
+          <CustomText style={styles.subTitle} text="Enter new password" />
 
           <View style={styles.inputContainer}>
             <IconInput
               iconName="padlock"
-              placeHolder="New Password"
+              placeHolder="New Password*"
               secureTextEntry></IconInput>
             <IconInput
               iconName="padlock"
-              placeHolder="Confirm Password"
+              placeHolder="Confirm Password*"
               secureTextEntry></IconInput>
           </View>
-          <Button title="Save Password" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Save Password"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </ScrollView>
       </View>
     </View>

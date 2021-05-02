@@ -26,14 +26,14 @@ const RatingScreen = () => {
       <Header
         // primaryText="Sign in"
         leftIcon="left-arrow"
-        leftIconColor="#616161"
-        leftIconBg={theme.colors.WHITE}
+        // leftIconColor="#616161"
+        // leftIconBg={theme.colors.WHITE}
         headerBackground={theme.colors.PRIMARY_BLUE}
       />
 
       <View style={{alignItems: 'center'}}>
         <CustomText
-          text="Rate our service"
+          text="Rate our services"
           color={theme.colors.WHITE}
           fontFamily={theme.fontFamily.bold}
           fontSize="25"
@@ -77,9 +77,11 @@ const RatingScreen = () => {
           />
 
           <TextInput
-            placeholder="Add your thoughts here ..."
+            // placeholder="Add your thoughts here..."
+            placeholder="Message"
+            placeholderTextColor="#abaeb0"
             multiline
-            numberOfLines={5}
+            numberOfLines={10}
             style={styles.textarea}
           />
 
@@ -174,6 +176,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginTop: 15,
     marginBottom: 20,
+    color: theme.colors.black,
   },
   subTitle: {
     color: theme.colors.SUB_TITLE,

@@ -9,7 +9,7 @@ const BodyTitle = ({title}) => {
       <CustomText
         text={title}
         color={theme.colors.BODY_TITLE}
-        fontSize={25}
+        fontSize={26}
         fontFamily={theme.fontFamily.bold}
       />
     </View>

@@ -29,7 +29,11 @@ const OtpScreen = () => {
             />
             {/* <IconInput iconName="call" placeHolder="Phone" /> */}
           </View>
-          <Button title="Continue" fontFamily={theme.fontFamily.bold} />
+          <Button
+            title="Continue"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </ScrollView>
       </View>
     </View>

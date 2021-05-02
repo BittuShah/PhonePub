@@ -3,7 +3,9 @@ import {StyleSheet, TextInput} from 'react-native';
 // import theme from '../../theme';
 import {StyleContainer, StyleInput, StyleSelectContainer} from './style';
 import Icon from './../Icon/index';
+import TextInputMask from 'react-native-text-input-mask';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import theme from '../../theme';
 
 export const IconInput = ({
   placeHolder,
@@ -18,6 +20,7 @@ export const IconInput = ({
   onChangeText,
   value,
   marginBottom,
+  maskValue,
 }) => {
   return (
     <>
@@ -31,16 +34,34 @@ export const IconInput = ({
             color="#393939"
           />
           <KeyboardAwareScrollView>
-            <StyleInput
-              placeholder={placeHolder}
-              keyboardType={keyboardType}
-              secureTextEntry={secureTextEntry}
-              multiline={multiline}
-              numberOfLines={numberOfLines}
-              placeholderTextColor="#abaeb0"
-              onChangeText={onChangeText}
-              value={value}
-            />
+            {!maskValue ? (
+              <StyleInput
+                placeholder={placeHolder}
+                keyboardType={keyboardType}
+                secureTextEntry={secureTextEntry}
+                multiline={multiline}
+                numberOfLines={numberOfLines}
+                placeholderTextColor="#abaeb0"
+                onChangeText={onChangeText}
+                value={value}
+              />
+            ) : (
+              <TextInputMask
+                refInput={ref => {
+                  this.input = ref;
+                }}
+                onChangeText={onChangeText}
+                mask={maskValue}
+                value={value}
+                placeholder={placeHolder}
+                keyboardType={keyboardType}
+                placeholderTextColor="#abaeb0"
+                style={{
+                  color: theme.colors.black,
+                  marginLeft: 7,
+                }}
+              />
+            )}
           </KeyboardAwareScrollView>
         </StyleContainer>
       ) : (
