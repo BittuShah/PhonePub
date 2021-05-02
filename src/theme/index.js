@@ -6,15 +6,16 @@ export default theme = {
     //GIVEN COLORS
     NAVY_BLUE: '#000497',
     PINK: '#ff1f80',
-    GREEN: '#2dcd75',
-    GREEN_LIGHT: '#21e600',
+    GREEN: '#3bc95e',
+    // GREEN_LIGHT: '#B0E9BE',
+    GREEN_LIGHT: '#C4EECE',
 
     //DEVELOPER COLORS
     GOLDEN: '#f5a927',
     WHITE: '#ffffff',
     PLACE_HOLDER_TEXT_COLOR: '#c9c9c9',
     GREY: 'grey',
-    GREY2: '#aaa',
+    GREY2: '#94989b',
     GREY3: '#ccc',
     GREY4: '#e9e9e9',
     GREY5: '#f8f8f8',
@@ -24,6 +25,9 @@ export default theme = {
     // BLACK: '#000',
     // black: '#000', // #1A1A1A
     RED: '#ff3b30',
+    RED_LIGHT: '#FF7F7F',
+    YELLOW: '#FFFF33',
+    YELLOW_LIGHT: '#FFFF99',
     BACKGROUND_COLOR: '#EEEFF1',
     BLUE: '#0079B8',
     PRIMARY_BLUE: '#39abee',

@@ -24,6 +24,8 @@ export const products = [
     price: 200,
     category: ['Mobile Covers'],
     quantity: 3,
+    status: 'pending',
+    date: new Date(),
   },
   {
     id: '2',
@@ -32,6 +34,8 @@ export const products = [
     price: 2000,
     category: ['Head Phones'],
     quantity: 1,
+    status: 'cancel',
+    date: new Date(),
   },
   {
     id: '3',
@@ -40,6 +44,8 @@ export const products = [
     price: 50,
     category: ['Phone Ring Holder'],
     quantity: 5,
+    status: 'success',
+    date: new Date(),
   },
   {
     id: '4',
@@ -48,6 +54,8 @@ export const products = [
     price: 300,
     category: ['Car Mounts'],
     quantity: 3,
+    status: 'success',
+    date: new Date(),
   },
   {
     id: '5',
@@ -56,6 +64,8 @@ export const products = [
     price: 1000,
     category: ['OTG Cable'],
     quantity: 1,
+    status: 'pending',
+    date: new Date(),
   },
   {
     id: '6',
@@ -64,6 +74,8 @@ export const products = [
     price: 400,
     category: ['OTG Cable', 'USB'],
     quantity: 10,
+    status: 'cancel',
+    date: new Date(),
   },
   {
     id: '7',
@@ -72,6 +84,8 @@ export const products = [
     price: 1500,
     category: ['Smartwatches'],
     quantity: 3,
+    status: 'pending',
+    date: new Date(),
   },
   {
     id: '8',
@@ -80,6 +94,8 @@ export const products = [
     price: 4000,
     category: ['Selfie Sticks'],
     quantity: 9,
+    status: 'success',
+    date: new Date(),
   },
 ];
 
