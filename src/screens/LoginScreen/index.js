@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+
 import theme from '../../theme';
 import {
   Button,
@@ -16,9 +17,21 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const LoginScreen = () => {
+  const [phoneOrEmail, setPhoneOrEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signInHandler = () => {
+    if (!phoneOrEmail) {
+      showToast('Please enter phone number or email address');
+    } else if (!password) {
+      showToast('Please enter password');
+    }
+  };
+
   return (
     <View
       style={{
@@ -47,17 +60,22 @@ const LoginScreen = () => {
           <View style={styles.inputContainer}>
             <IconInput
               iconName="user-fill"
-              placeHolder="Phone or Email*"></IconInput>
+              placeHolder="Phone or Email*"
+              onChangeText={text => setPhoneOrEmail(text)}
+            />
 
             <IconInput
               iconName="padlock"
               placeHolder="Password*"
-              secureTextEntry></IconInput>
+              secureTextEntry
+              onChangeText={text => setPassword(text)}
+            />
           </View>
           <Button
             title="Sign in"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => signInHandler()}
           />
           <View style={styles.link}>
             <Link text="Forgot your password?" />

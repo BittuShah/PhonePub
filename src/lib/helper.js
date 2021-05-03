@@ -1,4 +1,5 @@
 import moment from 'moment';
+import {showMessage} from 'react-native-flash-message';
 
 export const truncate = (str, n) => {
   return str.length > n ? str.substr(0, n - 1) + '...' : str;
@@ -15,4 +16,11 @@ export const generateGreetings = () => {
   } else {
     return 'Hello';
   }
+};
+
+export const showToast = (message, type = 'danger') => {
+  showMessage({
+    message: message,
+    type: type,
+  });
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {
@@ -8,9 +8,20 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const ResetPasswordScreen = () => {
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const onSavePasswordHandler = () => {
+    if (!newPassword) {
+      showToast('Please enter new password');
+    } else if (!confirmPassword) {
+      showToast('Please enter confirm password');
+    }
+  };
   return (
     <View
       style={{
@@ -35,16 +46,21 @@ const ResetPasswordScreen = () => {
             <IconInput
               iconName="padlock"
               placeHolder="New Password*"
-              secureTextEntry></IconInput>
+              secureTextEntry
+              onChangeText={text => setNewPassword(text)}
+            />
             <IconInput
               iconName="padlock"
               placeHolder="Confirm Password*"
-              secureTextEntry></IconInput>
+              secureTextEntry
+              onChangeText={text => setConfirmPassword(text)}
+            />
           </View>
           <Button
             title="Save Password"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => onSavePasswordHandler()}
           />
         </ScrollView>
       </View>

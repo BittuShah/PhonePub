@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {
@@ -8,9 +8,18 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const ForgotPasswordScreen = () => {
+  const [phoneOrEmail, setPhoneOrEmail] = useState('');
+
+  const onSendOtp = () => {
+    if (!phoneOrEmail) {
+      showToast('Please enter email address or phone number');
+    }
+  };
+
   return (
     <View
       style={{
@@ -32,22 +41,23 @@ const ForgotPasswordScreen = () => {
             Enter your phone number and get the OTP to reset your password
           </Text> */}
           <CustomText
-            text="Enter your phone number and get the OTP to reset your password"
+            text="Enter your registered email address or phone number to get the OTP"
             style={styles.subTitle}
           />
 
           <View style={styles.inputContainer}>
             <IconInput
-              iconName="call"
-              placeHolder="Phone*"
-              keyboardType="numeric"
-              maskValue="+91 [0000000000]"
+              iconName="email-phone"
+              placeHolder="Email or phone*"
+              onChangeText={text => setPhoneOrEmail(text)}
+              // maskValue="+91 [0000000000]"
             />
           </View>
           <Button
             title="Send OTP"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => onSendOtp()}
           />
         </ScrollView>
       </View>

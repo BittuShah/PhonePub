@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import React, {useState} from 'react';
+import {View, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {
   Button,
@@ -8,9 +8,18 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const RegisterPhoneScreen = () => {
+  const [phone, setPhone] = useState('');
+
+  const onContinueHandler = () => {
+    if (!phone) {
+      showToast('Please enter phone number');
+    }
+  };
+
   return (
     <View
       style={{
@@ -36,12 +45,14 @@ const RegisterPhoneScreen = () => {
               placeHolder="Phone*"
               maskValue="+91 [0000000000]"
               keyboardType="number-pad"
+              onChangeText={(formated, extracted) => setPhone(extracted)}
             />
           </View>
           <Button
             title="Continue"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => onContinueHandler()}
           />
         </ScrollView>
       </View>
