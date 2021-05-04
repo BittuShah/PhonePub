@@ -11,6 +11,7 @@ import {
   SearchSelect,
 } from '../../components';
 import {states} from '../../lib/dummyData';
+import {showToast} from '../../lib/helper';
 
 const {height} = Dimensions.get('window');
 
@@ -20,11 +21,31 @@ const AddressScreen = ({isEdit}) => {
   const [cityModalOpen, setCityModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState({});
 
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [pinCode, setPinCode] = useState('');
+
   const onStateSelect = state => {
     setSelectedState(state);
   };
   const onCitySelect = city => {
     setSelectedCity(city);
+  };
+
+  const onSaveAddress = () => {
+    if (!name) {
+      showToast('Please enter name');
+    } else if (!address) {
+      showToast('Please enter address');
+    } else if (!selectedState?.name) {
+      showToast('Please select state');
+    } else if (!selectedCity?.name) {
+      showToast('Please select city');
+    } else if (!pinCode) {
+      showToast('Please enter pincode');
+    } else {
+      showToast('Address Saved', 'success');
+    }
   };
 
   return (
@@ -47,13 +68,18 @@ const AddressScreen = ({isEdit}) => {
           }}>
           <BodyTitle title="Delivery Address" />
           <View style={styles.inputContainer}>
-            <IconInput iconName="user-fill" placeHolder="Name" />
+            <IconInput
+              iconName="user-fill"
+              placeHolder="Name"
+              onChangeText={text => setName(text)}
+            />
 
             <IconInput
               iconName="home"
               multiline={true}
               numberOfLines={4}
               placeHolder="Address"
+              onChangeText={text => setAddress(text)}
             />
 
             <IconInput
@@ -66,7 +92,7 @@ const AddressScreen = ({isEdit}) => {
             <IconInput
               iconName="city"
               placeHolder="City"
-              select
+              value={selectedCity?.name}
               onPress={() => setCityModalOpen(true)}
             />
             <IconInput
@@ -74,6 +100,7 @@ const AddressScreen = ({isEdit}) => {
               placeHolder="Pincode"
               keyboardType="numeric"
               maskValue="[000000]"
+              onChangeText={(formated, extracted) => setPinCode(extracted)}
             />
             {/* <IconInput iconName="world" placeHolder="Country"></IconInput> */}
           </View>
@@ -81,6 +108,7 @@ const AddressScreen = ({isEdit}) => {
             title="Save Address"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => onSaveAddress()}
           />
         </ScrollView>
       </View>

@@ -20,10 +20,20 @@ import {
   Icon,
   BodyTitle,
 } from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const FeedbackScreen = () => {
   const [selectedEmoji, setSelectedEmoji] = useState('laugh');
+  const [message, setMessage] = useState('');
+
+  const onSubmit = () => {
+    if (!message) {
+      showToast('Please enter message');
+    } else {
+      showToast('Message sent', 'success');
+    }
+  };
 
   return (
     <View
@@ -151,6 +161,7 @@ const FeedbackScreen = () => {
             multiline
             numberOfLines={10}
             placeholderTextColor="#abaeb0"
+            onChangeText={text => setMessage(text)}
             style={styles.textarea}
           />
 
@@ -166,9 +177,10 @@ const FeedbackScreen = () => {
           </View> */}
           <View style={{alignItems: 'flex-end'}}>
             <Button
-              title="Back to home"
+              title="Send"
               fontFamily={theme.fontFamily.bold}
               color={theme.colors.WHITE}
+              onPress={() => onSubmit()}
             />
           </View>
           {/* <View style={styles.link}>

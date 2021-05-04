@@ -8,7 +8,7 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
-import {showToast} from '../../lib/helper';
+import {showToast, validatePhone} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const RegisterPhoneScreen = () => {
@@ -16,7 +16,11 @@ const RegisterPhoneScreen = () => {
 
   const onContinueHandler = () => {
     if (!phone) {
-      showToast('Please enter phone number');
+      showToast('Please enter phone');
+    } else if (!validatePhone(phone)) {
+      showToast('Please enter valid phone');
+    } else {
+      showToast('Phone number registered', 'success');
     }
   };
 

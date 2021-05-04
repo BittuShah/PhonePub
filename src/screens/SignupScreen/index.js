@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import theme from '../../theme';
 import {
@@ -10,9 +10,31 @@ import {
   CustomText,
 } from '../../components';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {showToast, validateEmail, validatePassword} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const SignupScreen = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const onRegister = () => {
+    if (!name) {
+      showToast('Please enter name');
+    } else if (!email) {
+      showToast('Please enter email');
+    } else if (!validateEmail(email)) {
+      showToast('Please enter valid email');
+    } else if (!password) {
+      showToast('Please enter password');
+    } else if (!validatePassword(password)) {
+      showToast('Password must be greater than 6 characters');
+    } else {
+      showToast('You are registered successfully', 'success');
+    }
+  };
+
   return (
     <View
       style={{
@@ -38,17 +60,23 @@ const SignupScreen = () => {
             <View style={styles.inputContainer}>
               {/* <IconInput iconName="id-card-fill" placeHolder="Name" /> */}
 
-              <IconInput iconName="user-fill" placeHolder="Name*" />
+              <IconInput
+                iconName="user-fill"
+                placeHolder="Name*"
+                onChangeText={text => setName(text)}
+              />
               <IconInput
                 iconName="email-fill"
                 placeHolder="Email*"
                 keyboardType="email-address"
+                onChangeText={text => setEmail(text)}
               />
 
               <IconInput
                 iconName="password-key"
                 placeHolder="Password*"
                 secureTextEntry
+                onChangeText={text => setPassword(text)}
                 // keyboardType="visible-password"
               />
 
@@ -57,11 +85,13 @@ const SignupScreen = () => {
                 placeHolder="Phone"
                 maskValue="+91 [0000000000]"
                 keyboardType="number-pad"
+                onChangeText={(formated, extracted) => setPhone(extracted)}
               />
             </View>
             <Button
               title="Register"
               fontFamily={theme.fontFamily.bold}
+              onPress={() => onRegister()}
               color="#fff"
             />
             <View style={styles.bottomTextView}>

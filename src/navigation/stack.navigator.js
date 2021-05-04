@@ -71,11 +71,11 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={LoginScreen}
         options={{header: props => null}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.SIGNUP_SCREEN}
         component={SignupScreen}
         options={{header: props => null}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.DELIVERY_ADDRESS_SCREEN}
         component={DeliveryAddressScreen}
@@ -139,13 +139,13 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={MyOrderScreen}
         options={{headerShown: false}}
       /> */}
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
       {/* <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}

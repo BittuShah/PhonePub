@@ -8,7 +8,7 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
-import {showToast} from '../../lib/helper';
+import {showToast, validateEmail, validatePhone} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const ForgotPasswordScreen = () => {
@@ -17,6 +17,10 @@ const ForgotPasswordScreen = () => {
   const onSendOtp = () => {
     if (!phoneOrEmail) {
       showToast('Please enter email address or phone number');
+    } else if (!validateEmail(phoneOrEmail) && !validatePhone(phoneOrEmail)) {
+      showToast('Please enter valid phone or email');
+    } else {
+      showToast('Otp sent', 'success');
     }
   };
 

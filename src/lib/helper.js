@@ -24,3 +24,17 @@ export const showToast = (message, type = 'danger') => {
     type: type,
   });
 };
+
+export const validateEmail = email => {
+  let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+  return regex.test(email);
+};
+
+export const validatePhone = phone => {
+  let regex = /^[6-9]\d{9}$/;
+  return regex.test(phone);
+};
+
+export const validatePassword = password => {
+  return password.length > 6;
+};

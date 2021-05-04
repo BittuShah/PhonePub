@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import OtpInputs from 'react-native-otp-inputs';
 import theme from '../../theme';
 import {Button, IconInput, Header} from '../../components';
+import {showToast} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 const OtpScreen = () => {
+  const [OTP, setOTP] = useState('');
+
+  const onSubmit = () => {
+    if (!OTP) {
+      showToast('Please enter OTP');
+    } else {
+      showToast('Phone Verified', 'success');
+    }
+  };
+
   return (
     <View
       style={{
@@ -23,9 +34,9 @@ const OtpScreen = () => {
 
           <View style={styles.inputContainer}>
             <OtpInputs
-              handleChange={code => console.log(code)}
               numberOfInputs={4}
               inputStyles={styles.otpInputStyle}
+              handleChange={code => setOTP(code)}
             />
             {/* <IconInput iconName="call" placeHolder="Phone" /> */}
           </View>
@@ -33,6 +44,7 @@ const OtpScreen = () => {
             title="Continue"
             fontFamily={theme.fontFamily.bold}
             color="#fff"
+            onPress={() => onSubmit()}
           />
         </ScrollView>
       </View>

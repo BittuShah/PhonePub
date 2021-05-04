@@ -8,7 +8,7 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
-import {showToast} from '../../lib/helper';
+import {showToast, validatePassword} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const ResetPasswordScreen = () => {
@@ -18,8 +18,14 @@ const ResetPasswordScreen = () => {
   const onSavePasswordHandler = () => {
     if (!newPassword) {
       showToast('Please enter new password');
+    } else if (!validatePassword(newPassword)) {
+      showToast('Password must be greater than 6 characters');
     } else if (!confirmPassword) {
       showToast('Please enter confirm password');
+    } else if (!validatePassword(confirmPassword)) {
+      showToast('Password must be greater than 6 characters');
+    } else {
+      showToast('Password changed', 'success');
     }
   };
   return (

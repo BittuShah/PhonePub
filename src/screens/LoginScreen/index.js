@@ -17,7 +17,12 @@ import {
   BodyTitle,
   CustomText,
 } from '../../components';
-import {showToast} from '../../lib/helper';
+import {
+  showToast,
+  validateEmail,
+  validatePassword,
+  validatePhone,
+} from '../../lib/helper';
 const {height} = Dimensions.get('window');
 
 const LoginScreen = () => {
@@ -26,9 +31,15 @@ const LoginScreen = () => {
 
   const signInHandler = () => {
     if (!phoneOrEmail) {
-      showToast('Please enter phone number or email address');
+      showToast('Please enter phone or email');
+    } else if (!validateEmail(phoneOrEmail) && !validatePhone(phoneOrEmail)) {
+      showToast('Please enter valid phone or email');
     } else if (!password) {
       showToast('Please enter password');
+    } else if (!validatePassword(password)) {
+      showToast('Password must be greater than 6 characters');
+    } else {
+      showToast('Logged in successfully', 'success');
     }
   };
 
