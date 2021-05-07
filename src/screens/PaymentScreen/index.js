@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Image, ScrollView, StyleSheet, View, FlatList} from 'react-native';
+import stripe from 'tipsi-stripe';
 import {
   AddNewItem,
   BodyTitle,
@@ -7,7 +8,9 @@ import {
   CustomText,
   Header,
 } from '../../components';
+import {Constants} from '../../lib/constant';
 import {savedCards} from '../../lib/dummyData';
+import {showToast} from '../../lib/helper';
 import theme from '../../theme';
 
 import {
@@ -18,8 +21,14 @@ import {
   StyleCardBottomContainer,
 } from './style';
 
+stripe.setOptions({
+  publishableKey: Constants.STRIPE.PUBLISHABLE_KEY,
+  androidPayMode: 'test', // Android only
+});
+
 const PaymentScreen = () => {
   const [selectedCardId, setSelectedCardId] = useState('1');
+  const [newCardModal, setNewCardModal] = useState(false);
 
   const getCardImage = type => {
     switch (type) {
@@ -66,44 +75,47 @@ const PaymentScreen = () => {
     );
   };
 
+  const addNewCard = async () => {
+    const params = {
+      // mandatory
+      number: '4242424242424242',
+      expMonth: 11,
+      expYear: 22,
+      cvc: '223',
+    };
+
+    // try {
+    //   const token = await stripe.createTokenWithCard(params);
+    //   console.log(token);
+    // } catch (err) {
+    //   console.log(err);
+    //   showToast(err.message);
+    // }
+
+    const options = {
+      theme: {
+        primaryBackgroundColor: theme.colors.SCREEN_WHITE,
+        accentColor: theme.colors.PRIMARY_BLUE,
+        secondaryBackgroundColor: theme.colors.SCREEN_WHITE,
+        primaryForegroundColor: theme.colors.SCREEN_WHITE,
+        secondaryForegroundColor: theme.colors.SCREEN_WHITE,
+        errorColor: 'blue',
+      },
+    };
+
+    try {
+      const result = await stripe.paymentRequestWithCardForm(options);
+      console.log(result);
+    } catch (err) {
+      showToast(err.message);
+    }
+  };
+
   return (
     <StyleMainContainer>
       <Header leftIcon="left-arrow" headerBackground="transparent" />
       <StyleBodyContainer>
         <BodyTitle title="Payment" />
-        {/* <ScrollView style={styles.cardsContainer} horizontal>
-          {savedCards.map(card => {
-            return (
-              <StyleCard
-                key={card.id}
-                background={
-                  selectedCardId === card.id
-                    ? theme.colors.GOLDEN
-                    : theme.colors.PRIMARY_BLUE
-                }
-                onPress={() => setSelectedCardId(card.id)}>
-                <CustomText
-                  text={`**** **** **** ${card.cardNum}`}
-                  fontFamily={theme.fontFamily.bold}
-                  fontSize={theme.fontSize.MEDIUM}
-                  color={theme.colors.WHITE}
-                />
-                <StyleCardBottomContainer>
-                  <CustomText
-                    text={card.cardExpiry}
-                    fontFamily={theme.fontFamily.bold}
-                    fontSize={theme.fontSize.MEDIUM}
-                    color={theme.colors.WHITE}
-                  />
-                  <Image
-                    source={getCardImage(card.cardType)}
-                    style={styles.cardTypeImage}
-                  />
-                </StyleCardBottomContainer>
-              </StyleCard>
-            );
-          })}
-        </ScrollView> */}
         <View style={styles.cardsContainer}>
           <FlatList
             horizontal
@@ -123,8 +135,7 @@ const PaymentScreen = () => {
             }
           />
         </View>
-
-        <AddNewItem title="Add new card" />
+        <AddNewItem title="Add new card" onPress={() => addNewCard()} />
       </StyleBodyContainer>
       <StyleFooterContainer style={styles.footerContainer}>
         <View style={styles.subtotalContainer}>
