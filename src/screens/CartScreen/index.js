@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import * as Animatable from 'react-native-animatable';
 
 import {
   View,
@@ -24,6 +23,7 @@ import {
   BodyTitle,
 } from '../../components';
 import theme from '../../theme';
+import {products} from '../../lib/dummyData';
 const {height} = Dimensions.get('window');
 
 const CartScreen = ({route, navigation}) => {
@@ -56,59 +56,73 @@ const CartScreen = ({route, navigation}) => {
           <BodyTitle title="My Cart" />
         </View>
 
-        <View style={styles.itemsView}>
-          <CartProductsListing />
-        </View>
+        {/* cart items */}
+        {products.length > 0 && (
+          <View style={styles.itemsView}>
+            <CartProductsListing products={products} />
+          </View>
+        )}
 
+        {/* empty cart image */}
+        {products.length < 1 && (
+          <View style={styles.emptyCartView}>
+            <Image
+              source={require('../../assets/empty_cart.png')}
+              style={styles.emptyCart}
+            />
+            <CustomText
+              text="Your cart is empty"
+              style={{marginTop: 10}}
+              fontSize={18}
+              fontFamily={theme.fontFamily.bold}
+            />
+          </View>
+        )}
+        {/* add more items */}
         <View style={{marginVertical: 8}}>
           <AddNewItem title="Add more items" />
         </View>
       </View>
-      <View style={styles.checkoutCountainer}>
-        <CustomText
-          text="May, 2021"
-          color={theme.colors.GOLDEN}
-          fontSize="13"
-        />
-        <View style={styles.totalPrice}>
+
+      {/* checkout container  */}
+      {products.length > 0 && (
+        <View style={styles.checkoutCountainer}>
           <CustomText
-            text="Total :"
-            fontFamily={theme.fontFamily.medium}
-            color={theme.colors.SUB_TITLE}
-            fontSize="18"
+            text="May, 2021"
+            color={theme.colors.GOLDEN}
+            fontSize="13"
           />
-          <View style={styles.priceView}>
-            {/* <Text> */}
-            <Icon
-              name="rupees"
-              height="15"
-              width="15"
-              color={theme.colors.SUB_TITLE}
-            />
-            {/* </Text> */}
+          <View style={styles.totalPrice}>
             <CustomText
-              text="170"
-              fontFamily={theme.fontFamily.bold}
-              fontSize="28"
-              color={theme.colors.TITLE}
+              text="Total :"
+              fontFamily={theme.fontFamily.medium}
+              color={theme.colors.SUB_TITLE}
+              fontSize="18"
             />
+            <View style={styles.priceView}>
+              {/* <Text> */}
+              <Icon
+                name="rupees"
+                height="15"
+                width="15"
+                color={theme.colors.SUB_TITLE}
+              />
+              {/* </Text> */}
+              <CustomText
+                text="170"
+                fontFamily={theme.fontFamily.bold}
+                fontSize="28"
+                color={theme.colors.TITLE}
+              />
+            </View>
           </View>
+          <Button
+            title="Checkout"
+            fontFamily={theme.fontFamily.bold}
+            color="#fff"
+          />
         </View>
-        <Button
-          title="Checkout"
-          fontFamily={theme.fontFamily.bold}
-          color="#fff"
-        />
-      </View>
-      {/* <Text
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 18,
-          fontFamily: theme.fontFamily.regular,
-        }}>
-        Hello world
-      </Text> */}
+      )}
     </View>
   );
 };
@@ -168,6 +182,16 @@ const styles = StyleSheet.create({
   addMore: {
     flexDirection: 'row',
     fontFamily: theme.fontFamily.bold,
+  },
+  emptyCart: {
+    height: 250,
+    width: 250,
+  },
+  emptyCartView: {
+    // justifyContent: 'center',
+    paddingTop: 50,
+    alignItems: 'center',
+    height: height - 365 + 150,
   },
 });
 

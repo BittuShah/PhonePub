@@ -1,10 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, FlatList, Image} from 'react-native';
+import {StyleSheet, View, FlatList, Image, Dimensions} from 'react-native';
 import {CustomText, CartItem} from '../';
-import {products} from '../../lib/dummyData';
 import theme from './../../theme';
 
-const CartProductsListing = () => {
+const {height} = Dimensions.get('window');
+
+const CartProductsListing = ({products}) => {
   return (
     <FlatList
       data={products}
@@ -41,15 +42,6 @@ const CartProductsListing = () => {
           </View>
         </View>
       )}
-      ListEmptyComponent={
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <CustomText text="No Records Found." />
-        </View>
-      }
     />
   );
 };
