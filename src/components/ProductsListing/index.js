@@ -69,15 +69,6 @@ const ProductsListing = ({products}) => {
         <RenderProduct key={index} product={item} index={index} />
       )}
       numColumns={2}
-      ListEmptyComponent={
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <CustomText text="No Records Found." />
-        </View>
-      }
     />
   );
 };

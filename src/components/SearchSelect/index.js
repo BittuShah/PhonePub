@@ -17,6 +17,10 @@ import theme from '../../theme';
 const SearchSelect = props => {
   const [data, setData] = useState(props.data);
 
+  useEffect(() => {
+    setData(props.data);
+  }, [props.data]);
+
   const renderHeader = () => {
     return (
       <View style={styles.header}>

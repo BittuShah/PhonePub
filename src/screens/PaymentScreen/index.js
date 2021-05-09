@@ -117,23 +117,33 @@ const PaymentScreen = () => {
       <StyleBodyContainer>
         <BodyTitle title="Payment" />
         <View style={styles.cardsContainer}>
-          <FlatList
-            horizontal
-            data={savedCards}
-            keyExtractor={item => item.id}
-            renderItem={({item, index}) => (
-              <RenderCard key={index} card={item} index={index} />
-            )}
-            ListEmptyComponent={
-              <View
-                style={{
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <CustomText text="No Cards Found." />
-              </View>
-            }
-          />
+          {savedCards.length > 0 ? (
+            <FlatList
+              horizontal
+              data={savedCards}
+              keyExtractor={item => item.id}
+              renderItem={({item, index}) => (
+                <RenderCard key={index} card={item} index={index} />
+              )}
+            />
+          ) : (
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={require('../../assets/empty_card.png')}
+                style={{height: 100, width: 100}}
+              />
+              <CustomText
+                text="You have not added any card yet."
+                style={{marginTop: 10}}
+                fontSize={18}
+                fontFamily={theme.fontFamily.bold}
+              />
+            </View>
+          )}
         </View>
         <AddNewItem title="Add new card" onPress={() => addNewCard()} />
       </StyleBodyContainer>

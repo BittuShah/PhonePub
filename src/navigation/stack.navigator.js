@@ -115,13 +115,13 @@ export const PhonePubStackScreen = ({navigation}) => {
           header: props => null,
         }}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.CART_SCREEN}
         component={CartScreen}
         options={{
           headerShown: false,
         }}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.PAYMENT_SCREEN}
         component={PaymentScreen}
@@ -134,11 +134,11 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={OrderScreen}
         options={{headerShown: false}}
       /> */}
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.MY_ORDER_SCREEN}
         component={MyOrderScreen}
         options={{headerShown: false}}
-      /> */}
+      />
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}

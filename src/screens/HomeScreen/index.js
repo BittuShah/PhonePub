@@ -1,16 +1,10 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {
   Header,
-  IconBg,
   CategoriesListing,
   ProductsListing,
+  CustomText,
 } from '../../components';
 import {
   StyleCategoriedContainer,
@@ -46,7 +40,22 @@ const HomeScreen = ({route, navigation}) => {
           />
         </StyleCategoriedContainer>
         <StyleProductsContainer>
-          <ProductsListing products={products} />
+          {products.length > 0 ? (
+            <ProductsListing products={products} />
+          ) : (
+            <View style={styles.emptyListView}>
+              <Image
+                source={require('../../assets/empty_cart.png')}
+                style={styles.emptyListImage}
+              />
+              <CustomText
+                text="No products found."
+                style={{marginTop: 10}}
+                fontSize={18}
+                fontFamily={theme.fontFamily.bold}
+              />
+            </View>
+          )}
         </StyleProductsContainer>
       </StyleContentContainer>
     </StyleMainContainer>
@@ -57,6 +66,14 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 30,
     borderTopStartRadius: 30,
     backgroundColor: theme.colors.WHITE,
+  },
+  emptyListView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyListImage: {
+    height: 250,
+    width: 250,
   },
 });
 

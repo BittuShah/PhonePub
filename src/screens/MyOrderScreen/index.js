@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleContentContainer, StyleMainContainer} from './style';
-import {BodyTitle, CustomText, Header, Icon} from '../../components';
 import {FlatList, Image, StyleSheet, View, Dimensions} from 'react-native';
+
+import {BodyTitle, CustomText, Header, Icon} from '../../components';
+import {StyleContentContainer, StyleMainContainer} from './style';
 import theme from '../../theme';
 import {products} from '../../lib/dummyData';
 import {truncate} from '../../lib/helper';
@@ -112,26 +113,32 @@ const MyOrderScreen = () => {
       <StyleContentContainer>
         <BodyTitle title="My Orders" />
         <View style={styles.productsView}>
-          <FlatList
-            data={products}
-            key="_"
-            showsVerticalScrollIndicator={false}
-            scrollEnabled={true}
-            keyExtractor={item => '_' + item.id}
-            renderItem={({item, index}) => (
-              <RenderDelivery key={index} delivery={item} index={index} />
-            )}
-            numColumns={1}
-            ListEmptyComponent={
-              <View
-                style={{
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <CustomText text="No Records Found." />
-              </View>
-            }
-          />
+          {products.length > 0 ? (
+            <FlatList
+              data={products}
+              key="_"
+              showsVerticalScrollIndicator={false}
+              scrollEnabled={true}
+              keyExtractor={item => '_' + item.id}
+              renderItem={({item, index}) => (
+                <RenderDelivery key={index} delivery={item} index={index} />
+              )}
+              numColumns={1}
+            />
+          ) : (
+            <View style={styles.emptyListView}>
+              <Image
+                source={require('../../assets/empty_cart.png')}
+                style={styles.emptyListImage}
+              />
+              <CustomText
+                text="You have not ordered yet."
+                style={{marginTop: 10}}
+                fontSize={18}
+                fontFamily={theme.fontFamily.bold}
+              />
+            </View>
+          )}
         </View>
       </StyleContentContainer>
     </StyleMainContainer>
@@ -191,6 +198,14 @@ const styles = StyleSheet.create({
   },
   productTitleView: {
     maxWidth: 155,
+  },
+  emptyListView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyListImage: {
+    height: 250,
+    width: 250,
   },
 });
 

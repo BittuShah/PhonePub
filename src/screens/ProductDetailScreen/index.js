@@ -177,30 +177,20 @@ const ProductDetailScreen = () => {
                 />
               </View>
             </ScrollView>
-            <View style={styles.cartBtnView}>
-              <View style={styles.cartBtnContainer}>
-                <Button
-                  title="Add to cart"
-                  fontFamily={theme.fontFamily.bold}
-                  color="#fff"
-                />
-              </View>
-              <View style={styles.wishlistCountContainer}>
-                <IconBg
-                  name="heart-fill"
-                  color={theme.colors.WHITE}
-                  backgroundColor={theme.colors.GOLDEN}
-                  height="20"
-                  width="20"
-                />
-                <View style={{marginLeft: 5}}>
-                  <CustomText
-                    text="15"
-                    color={theme.colors.SUB_TITLE}
-                    fontSize="14"
-                  />
-                </View>
-              </View>
+
+            <View style={styles.bottomBtnView}>
+              <Button
+                title="Add to cart"
+                fontFamily={theme.fontFamily.bold}
+                color="#fff"
+              />
+              <Button
+                title="Buy now"
+                fontFamily={theme.fontFamily.bold}
+                color="#fff"
+                backgroundColor={theme.colors.GOLDEN}
+                containerStyle={styles.buyNowBtn}
+              />
             </View>
           </ScrollView>
         </View>
@@ -241,7 +231,7 @@ const styles = StyleSheet.create({
     // al
   },
   descriptionView: {
-    marginTop: 5,
+    marginVertical: 10,
     // marginBottom: 10,
   },
   description: {
@@ -250,7 +240,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.bold,
   },
   priceQuantity: {
-    marginTop: 15,
+    marginVertical: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -284,27 +274,18 @@ const styles = StyleSheet.create({
   imageSlider: {
     flexDirection: 'row',
     // overflow: 'scroll',
-    marginTop: 15,
+    marginVertical: 25,
   },
   image: {
     // borderWidth: 1,
     height: 70,
     width: 65,
   },
-  cartBtnView: {
+  bottomBtnView: {
     marginTop: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
   },
-  cartBtnContainer: {
-    width: width - 110,
-  },
-  wishlistCountContainer: {
-    flexDirection: 'row',
-    // justifyContent: ""
-    alignItems: 'center',
-    justifyContent: 'space-around',
+  buyNowBtn: {
+    marginTop: 10,
   },
 });
 

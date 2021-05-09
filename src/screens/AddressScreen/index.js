@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
-import Modal from 'react-native-modal';
+
 import theme from '../../theme';
 import {
   Button,
@@ -10,12 +10,13 @@ import {
   BodyTitle,
   SearchSelect,
 } from '../../components';
-import {states} from '../../lib/dummyData';
+import {statesAndCities} from '../../lib/stateAndCities';
 import {showToast} from '../../lib/helper';
 
 const {height} = Dimensions.get('window');
 
 const AddressScreen = ({isEdit}) => {
+  const [cities, setCities] = useState([]);
   const [stateModalOpen, setStateModalOpen] = useState(false);
   const [selectedState, setSelectedState] = useState({});
   const [cityModalOpen, setCityModalOpen] = useState(false);
@@ -26,10 +27,24 @@ const AddressScreen = ({isEdit}) => {
   const [pinCode, setPinCode] = useState('');
 
   const onStateSelect = state => {
+    setCities(state.districts);
     setSelectedState(state);
   };
+
   const onCitySelect = city => {
     setSelectedCity(city);
+  };
+
+  const onSelectStatePress = () => {
+    setStateModalOpen(true);
+  };
+
+  const onSelectCityPress = () => {
+    if (selectedState?.name) {
+      setCityModalOpen(true);
+    } else {
+      showToast('Please select state first');
+    }
   };
 
   const onSaveAddress = () => {
@@ -62,11 +77,8 @@ const AddressScreen = ({isEdit}) => {
       />
 
       <View style={styles.whiteView}>
-        <ScrollView
-          style={{
-            paddingHorizontal: 20,
-          }}>
-          <BodyTitle title="Delivery Address" />
+        <BodyTitle title="Delivery Address" />
+        <ScrollView>
           <View style={styles.inputContainer}>
             <IconInput
               iconName="user-fill"
@@ -87,13 +99,14 @@ const AddressScreen = ({isEdit}) => {
               placeHolder="State"
               select
               value={selectedState?.name}
-              onPress={() => setStateModalOpen(true)}
+              onPress={() => onSelectStatePress()}
             />
             <IconInput
               iconName="city"
               placeHolder="City"
+              select
               value={selectedCity?.name}
-              onPress={() => setCityModalOpen(true)}
+              onPress={() => onSelectCityPress()}
             />
             <IconInput
               iconName="pincode"
@@ -115,7 +128,7 @@ const AddressScreen = ({isEdit}) => {
       <SearchSelect
         open={stateModalOpen}
         close={setStateModalOpen}
-        data={states}
+        data={statesAndCities}
         headerText="Select state"
         onSelect={onStateSelect}
         selectedValue={selectedState}
@@ -123,7 +136,7 @@ const AddressScreen = ({isEdit}) => {
       <SearchSelect
         open={cityModalOpen}
         close={setCityModalOpen}
-        data={states}
+        data={cities}
         headerText="Select city"
         onSelect={onCitySelect}
         selectedValue={selectedCity}
@@ -143,6 +156,7 @@ const styles = StyleSheet.create({
     // paddingHorizontal: 20,
     height: height - 90,
     marginTop: 40,
+    paddingHorizontal: 20,
   },
   subTitle: {
     color: theme.colors.SUB_TITLE,
