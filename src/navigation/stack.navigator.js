@@ -23,6 +23,7 @@ import {
   TestingPratikComponents,
   OtpScreen,
   CartScreen,
+  WishlistScreen,
   DeliveryAddressScreen,
   AddressScreen,
   TestingParshvComponents,
@@ -115,6 +116,15 @@ export const PhonePubStackScreen = ({navigation}) => {
           header: props => null,
         }}
       /> */}
+
+      <Stack.Screen
+        name={AppRoute.WISHLIST_SCREEN}
+        component={WishlistScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+
       {/* <Stack.Screen
         name={AppRoute.CART_SCREEN}
         component={CartScreen}
@@ -134,11 +144,11 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={OrderScreen}
         options={{headerShown: false}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.MY_ORDER_SCREEN}
         component={MyOrderScreen}
         options={{headerShown: false}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}

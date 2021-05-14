@@ -17,6 +17,8 @@ import AddNewItem from './AddNewItem';
 import Quantity from './Quantity';
 import CartItem from './CartItem';
 import SearchSelect from './SearchSelect';
+import WishlistProductsListing from './WishlistProductsListing';
+import WishlistItem from './WishlistItem';
 
 export {
   CustomText,
@@ -36,4 +38,6 @@ export {
   Quantity,
   CartItem,
   SearchSelect,
+  WishlistProductsListing,
+  WishlistItem,
 };
