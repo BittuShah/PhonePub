@@ -31,6 +31,7 @@ import PaymentScreen from './PaymentScreen';
 import RatingScreen from './RatingScreen';
 // import FeedbackScreen from './RateScreen/index';
 import FeedbackScreen from './FeedbackScreen';
+import WishlistScreen from './WishlistScreen';
 
 export {
   CustomDrawer,
@@ -58,4 +59,5 @@ export {
   AddressScreen,
   PaymentScreen,
   RatingScreen,
+  WishlistScreen,
 };
