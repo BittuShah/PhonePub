@@ -88,7 +88,7 @@ const CartScreen = ({route, navigation}) => {
       {products.length > 0 && (
         <View style={styles.checkoutCountainer}>
           <CustomText
-            text="May, 2021"
+            text="June 08, 2021"
             color={theme.colors.GOLDEN}
             fontSize="13"
           />
@@ -109,7 +109,7 @@ const CartScreen = ({route, navigation}) => {
               />
               {/* </Text> */}
               <CustomText
-                text="170"
+                text="8050"
                 fontFamily={theme.fontFamily.bold}
                 fontSize="28"
                 color={theme.colors.TITLE}
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   },
   itemsView: {
     height: height - 365,
-
+    paddingTop: 20,
     // backgroundColor: 'red',
   },
   checkoutCountainer: {

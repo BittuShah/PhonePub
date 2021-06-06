@@ -155,7 +155,7 @@ const PaymentScreen = () => {
             fontSize={theme.fontSize.MEDIUM}
           />
           <CustomText
-            text="₹100.00"
+            text="₹8050.00"
             color={theme.colors.WHITE}
             fontSize={theme.fontSize.MEDIUM}
           />
@@ -180,7 +180,7 @@ const PaymentScreen = () => {
             fontFamily={theme.fontFamily.bold}
           />
           <CustomText
-            text="₹150.00"
+            text="₹9000.00"
             color={theme.colors.WHITE}
             fontSize={theme.fontSize.HEADING}
             fontFamily={theme.fontFamily.bold}

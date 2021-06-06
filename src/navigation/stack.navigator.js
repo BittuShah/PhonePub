@@ -134,11 +134,11 @@ export const PhonePubStackScreen = ({navigation}) => {
         component={OrderScreen}
         options={{headerShown: false}}
       /> */}
-      <Stack.Screen
+      {/* <Stack.Screen
         name={AppRoute.MY_ORDER_SCREEN}
         component={MyOrderScreen}
         options={{headerShown: false}}
-      />
+      /> */}
       {/* <Stack.Screen
         name={AppRoute.OTP_SCREEN}
         component={OtpScreen}
@@ -146,15 +146,15 @@ export const PhonePubStackScreen = ({navigation}) => {
           headerShown: false,
         }}
       /> */}
-      {/* <Stack.Screen
+      <Stack.Screen
         name={AppRoute.HOME_SCREEN}
         component={HomeScreen}
         options={{
           headerShown: false,
         }}
-      /> */}
-      {/*
-      <Stack.Screen
+      />
+
+      {/* <Stack.Screen
         name={AppRoute.BUY_NOW_SCREEN}
         component={BuyNowScreen}
         options={{headerShown: false}}

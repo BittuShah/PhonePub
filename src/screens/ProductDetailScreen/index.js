@@ -54,7 +54,7 @@ const ProductDetailScreen = () => {
         <View style={styles.whiteView}>
           <ScrollView style={{paddingHorizontal: 20}}>
             <View style={styles.titleView}>
-              <Text style={styles.title}>BOAT Head Phones</Text>
+              <Text style={styles.title}>OnePlus Buds Bluetooth Headset</Text>
               <Text onPress={() => setIsLiked(!isLiked)}>
                 <Icon
                   name={isLiked ? 'heart-fill' : 'heart'}
@@ -67,8 +67,7 @@ const ProductDetailScreen = () => {
             </View>
             <View style={styles.descriptionView}>
               <Text style={styles.description}>
-                Veg Cheese grilled sandwich / vegetable cheese Sandwich
-                Vegetarian
+                It’s time to take your music-listening experience up a notch.
               </Text>
             </View>
             <View style={styles.priceQuantity}>
@@ -85,7 +84,7 @@ const ProductDetailScreen = () => {
                     color={theme.colors.SUB_TITLE}
                   />
                 </Text>
-                <Text style={styles.price}>14.99</Text>
+                <Text style={styles.price}>4000</Text>
               </View>
             </View>
             <ScrollView style={styles.imageSlider} horizontal>
@@ -211,7 +210,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.WHITE,
     paddingTop: 20,
     paddingBottom: 40,
-    height: height - 200,
+    height: height - 250,
     top: 120,
     marginTop: 40,
   },

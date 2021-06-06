@@ -24,6 +24,8 @@ const ResetPasswordScreen = () => {
       showToast('Please enter confirm password');
     } else if (!validatePassword(confirmPassword)) {
       showToast('Password must be greater than 6 characters');
+    } else if (newPassword !== confirmPassword) {
+      showToast('Both password should be match');
     } else {
       showToast('Password changed', 'success');
     }

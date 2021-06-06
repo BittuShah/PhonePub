@@ -55,12 +55,9 @@ const OrderScreen = ({route, navigation}) => {
               />
               <CustomText
                 text={
-                  'Nani bhativad Nani bhativad Nani bhativad'.length > strLength
-                    ? truncate(
-                        'Nani bhativad Nani bhativad Nani bhativad',
-                        strLength,
-                      )
-                    : 'Nani bhativad Nani bhativad Nani bhativad'
+                  'Yash vihar, ambaji neliyu'.length > strLength
+                    ? truncate('Yash vihar, ambaji neliyu', strLength)
+                    : 'Yash vihar, ambaji neliyu'
                 }
                 fontSize={theme.fontSize.NORMAL}
               />
@@ -103,7 +100,7 @@ const OrderScreen = ({route, navigation}) => {
             />
             {/* </Text> */}
             <CustomText
-              text="170"
+              text="9050.00"
               fontFamily={theme.fontFamily.bold}
               fontSize="28"
               color={theme.colors.TITLE}

@@ -67,7 +67,7 @@ const MyOrderScreen = () => {
               fontSize={15}
             />
             <CustomText
-              text={moment(delivery.data).format('MMM DD, YYYY hh:mm A')}
+              text={moment(delivery.date).format('MMM DD, YYYY hh:mm A')}
               fontFamily={theme.fontFamily.bold}
               fontSize={15}
             />
